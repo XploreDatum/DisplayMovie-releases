@@ -12,7 +12,6 @@
   <meta property="og:description" content="An automatic timelapse of every day on your Mac. Capture, dedupe, compile, share." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://displaymovie.vercel.app" />
-  <meta property="og:image" content="https://displaymovie.vercel.app/og.png" />
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -25,42 +24,40 @@
 
   <a class="skip-link" href="#main-content">Skip to content</a>
 
-  <!-- Decorative grain + bloom -->
+  <!-- Aurora gradient mesh + film grain -->
+  <div class="aurora" aria-hidden="true">
+    <div class="aurora-blob aurora-1"></div>
+    <div class="aurora-blob aurora-2"></div>
+    <div class="aurora-blob aurora-3"></div>
+  </div>
   <div class="grain" aria-hidden="true"></div>
-  <div class="bloom bloom-1" aria-hidden="true"></div>
-  <div class="bloom bloom-2" aria-hidden="true"></div>
 
   <header class="nav">
     <a class="brand" href="/">
-      <span class="brand-mark" aria-hidden="true">
+      <span class="brand-mark">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="3" y="6" width="18" height="12" rx="2"></rect>
-          <line x1="3" y1="9" x2="21" y2="9"></line>
-          <line x1="3" y1="15" x2="21" y2="15"></line>
-          <line x1="7" y1="10.5" x2="7" y2="13.5"></line>
-          <line x1="11" y1="10.5" x2="11" y2="13.5"></line>
-          <line x1="15" y1="10.5" x2="15" y2="13.5"></line>
-          <line x1="19" y1="10.5" x2="19" y2="13.5"></line>
+          <rect x="3" y="6" width="18" height="12" rx="2"/>
+          <line x1="3" y1="9" x2="21" y2="9"/>
+          <line x1="3" y1="15" x2="21" y2="15"/>
+          <line x1="7" y1="10.5" x2="7" y2="13.5"/>
+          <line x1="11" y1="10.5" x2="11" y2="13.5"/>
+          <line x1="15" y1="10.5" x2="15" y2="13.5"/>
+          <line x1="19" y1="10.5" x2="19" y2="13.5"/>
         </svg>
       </span>
       <span class="brand-name">DisplayMovie</span>
     </a>
     <nav class="nav-links" aria-label="Primary">
+      <a href="#showcase">Features</a>
       <a href="#how">How it works</a>
-      <a href="#features">Features</a>
       <a href="#privacy">Privacy</a>
-      <a href="#download">Download</a>
     </nav>
     <div class="nav-cta">
       <a class="btn ghost small" href="https://github.com/XploreDatum/DisplayMovie-releases" target="_blank" rel="noopener">
-        <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-1.92c-3.2.7-3.87-1.54-3.87-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.78 1.2 1.78 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.71 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.77.12 3.06.74.81 1.19 1.84 1.19 3.1 0 4.44-2.7 5.42-5.27 5.7.41.36.78 1.07.78 2.17v3.21c0 .31.21.67.8.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5Z"/>
-        </svg>
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-1.92c-3.2.7-3.87-1.54-3.87-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.78 1.2 1.78 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.71 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.77.12 3.06.74.81 1.19 1.84 1.19 3.1 0 4.44-2.7 5.42-5.27 5.7.41.36.78 1.07.78 2.17v3.21c0 .31.21.67.8.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5Z"/></svg>
         GitHub
       </a>
-      <a class="btn primary small" href="#download">
-        Download
-      </a>
+      <a class="btn primary small" href="#download">Download</a>
     </div>
   </header>
 
@@ -68,411 +65,390 @@
 
     <!-- ─────────────────────────────  HERO  ───────────────────────────── -->
     <section class="hero">
-      <div class="hero-content">
-        <div class="kicker"><span class="kicker-dot"></span> v0.1.0 · macOS 14+ · Apple&nbsp;Silicon</div>
+      <div class="hero-text">
+        <div class="kicker">
+          <span class="kicker-dot"></span>
+          v0.1.0 · macOS 14+ · Apple Silicon
+        </div>
         <h1 class="display">
-          <span class="line">Every day,</span>
-          <span class="line"><em>a&nbsp;movie.</em></span>
+          Every day,<br/><em>a&nbsp;movie.</em>
         </h1>
         <p class="lede">
-          DisplayMovie quietly captures your Mac on your interval, drops idle frames, and
-          stitches the rest into a short daily timelapse. Watch it. Search the text inside.
-          Or skip the watching and ship it straight to YouTube.
+          DisplayMovie quietly captures your Mac on your interval, drops idle frames,
+          and stitches the rest into a daily timelapse. Watch it. Search it.
+          Ship it to YouTube.
         </p>
         <div class="hero-ctas">
-          <a class="btn primary" href="#download">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M12 3v12"/>
-              <path d="m6 9 6 6 6-6"/>
-              <path d="M5 21h14"/>
-            </svg>
+          <a class="btn primary big" href="#download">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m6 9 6 6 6-6"/><path d="M5 21h14"/></svg>
             Download for Mac
           </a>
-          <a class="btn ghost" href="https://github.com/XploreDatum/DisplayMovie-releases" target="_blank" rel="noopener">
-            View source on GitHub
-            <span class="arrow">↗</span>
+          <a class="btn ghost big" href="https://github.com/XploreDatum/DisplayMovie-releases" target="_blank" rel="noopener">
+            View on GitHub <span class="arrow">↗</span>
           </a>
         </div>
-        <div class="hero-meta">
-          <span class="meta-stat"><span class="counter" data-target="86400" data-suffix=" frames/day at 1s">0</span></span>
-          <span class="meta-sep"></span>
-          <span class="meta-stat"><span class="counter" data-target="16" data-suffix="s movie of an 8h day">0</span></span>
-          <span class="meta-sep"></span>
-          <span class="meta-stat">100% local processing</span>
-        </div>
+        <ul class="hero-meta">
+          <li><strong>1 s – 3 h</strong> intervals</li>
+          <li><strong>100%</strong> local processing</li>
+          <li><strong>0 KB</strong> telemetry</li>
+        </ul>
       </div>
 
-      <!-- Hero visual: animated film-strip with CSS-rendered app window inside -->
-      <div class="hero-visual" aria-hidden="true">
-        <div class="film-strip">
-          <div class="film-frame">
-            <div class="dot dot-red"></div><div class="dot dot-amber"></div><div class="dot dot-green"></div>
+      <!-- HERO product mockup — large, centered, no film-strip gimmick -->
+      <div class="hero-product" aria-hidden="true">
+        <div class="hero-glow"></div>
+        <div class="window-mock hero-window">
+          <div class="window-bar">
+            <div class="window-dots">
+              <span class="wdot red"></span><span class="wdot amber"></span><span class="wdot green"></span>
+            </div>
+            <div class="window-title">DisplayMovie</div>
           </div>
-          <div class="film-frame"></div>
-          <div class="film-frame"></div>
-          <div class="film-frame primary-frame">
-            <!-- ❶ embedded CSS-rendered DisplayMovie window -->
-            <div class="window-mock">
-              <div class="window-bar">
-                <div class="window-dots">
-                  <span class="wdot red"></span><span class="wdot amber"></span><span class="wdot green"></span>
+          <div class="window-body">
+            <aside class="window-side">
+              <div class="side-brand">
+                <div class="side-logo">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></svg>
                 </div>
+                <div class="side-title"><strong>DisplayMovie</strong><span>v0.1.0</span></div>
               </div>
-              <div class="window-body">
-                <aside class="window-side">
-                  <div class="side-brand">
-                    <div class="side-logo">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="3" y="6" width="18" height="12" rx="2"/>
-                        <line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/>
-                      </svg>
-                    </div>
-                    <div class="side-title">
-                      <strong>DisplayMovie</strong>
-                      <span>v0.1.0</span>
-                    </div>
-                  </div>
-                  <div class="side-group">
-                    <div class="side-label">Overview</div>
-                    <div class="side-item active">📊 Dashboard</div>
-                  </div>
-                  <div class="side-group">
-                    <div class="side-label">Settings</div>
-                    <div class="side-item">📷 Capture</div>
-                    <div class="side-item">🎬 Output</div>
-                    <div class="side-item">💾 Storage</div>
-                    <div class="side-item">📅 Schedule</div>
-                  </div>
-                </aside>
-                <section class="window-main">
-                  <div class="page-header">
-                    <div class="ph-badge"></div>
-                    <div class="ph-text">
-                      <h3>Dashboard</h3>
-                      <small>Friday, 15 May 2026</small>
-                    </div>
-                  </div>
-                  <div class="stat-row">
-                    <div class="stat-card"><span class="stat-num">317</span><span class="stat-label">frames today</span></div>
-                    <div class="stat-card"><span class="stat-num">5h&nbsp;42m</span><span class="stat-label">active</span></div>
-                    <div class="stat-card"><span class="stat-num">12</span><span class="stat-label">apps seen</span></div>
+              <div class="side-group">
+                <div class="side-label">Overview</div>
+                <div class="side-item active"><span class="side-bullet" data-tint="blue"></span> Dashboard</div>
+              </div>
+              <div class="side-group">
+                <div class="side-label">Settings</div>
+                <div class="side-item"><span class="side-bullet" data-tint="blue"></span> Capture</div>
+                <div class="side-item"><span class="side-bullet" data-tint="purple"></span> Output</div>
+                <div class="side-item"><span class="side-bullet" data-tint="indigo"></span> Storage</div>
+                <div class="side-item"><span class="side-bullet" data-tint="orange"></span> Schedule</div>
+                <div class="side-item"><span class="side-bullet" data-tint="pink"></span> Appearance</div>
+              </div>
+              <div class="side-group">
+                <div class="side-label">Sharing</div>
+                <div class="side-item"><span class="side-bullet" data-tint="red"></span> YouTube</div>
+              </div>
+            </aside>
+            <section class="window-main">
+              <header class="page-header">
+                <div class="ph-badge">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="20" x2="3" y2="10"/><line x1="9" y1="20" x2="9" y2="4"/><line x1="15" y1="20" x2="15" y2="14"/><line x1="21" y1="20" x2="21" y2="7"/></svg>
+                </div>
+                <div class="ph-text">
+                  <h3>Dashboard</h3>
+                  <small>Friday, 15 May 2026</small>
+                </div>
+                <div class="ph-actions">
+                  <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="14" height="12" rx="2"/><polyline points="22 8 18 12 22 16 22 8"/></svg> Capture</span>
+                  <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3 20 12 6 21 6 3"/></svg> Compile</span>
+                  <span class="chip primary">New movie</span>
+                </div>
+              </header>
+              <div class="stat-row">
+                <div class="stat-card"><span class="stat-num">317</span><span class="stat-label">Frames captured</span><small>for 2026-05-15</small></div>
+                <div class="stat-card"><span class="stat-num">5h 42m</span><span class="stat-label">Active time</span><small>interval × frames</small></div>
+                <div class="stat-card"><span class="stat-num">12</span><span class="stat-label">Apps seen</span><small>distinct frontmost</small></div>
+              </div>
+              <div class="chart-row">
+                <div class="chart-card">
+                  <div class="chart-head">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                    Captures by hour
                   </div>
                   <div class="chart">
-                    <div class="bar" style="height: 18%"></div>
-                    <div class="bar" style="height: 32%"></div>
-                    <div class="bar" style="height: 55%"></div>
-                    <div class="bar" style="height: 78%"></div>
+                    <div class="bar" style="height: 14%"></div>
+                    <div class="bar" style="height: 22%"></div>
+                    <div class="bar" style="height: 38%"></div>
+                    <div class="bar" style="height: 56%"></div>
+                    <div class="bar" style="height: 82%"></div>
+                    <div class="bar" style="height: 95%"></div>
+                    <div class="bar" style="height: 88%"></div>
+                    <div class="bar" style="height: 70%"></div>
+                    <div class="bar" style="height: 76%"></div>
+                    <div class="bar" style="height: 84%"></div>
                     <div class="bar" style="height: 92%"></div>
                     <div class="bar" style="height: 68%"></div>
-                    <div class="bar" style="height: 84%"></div>
-                    <div class="bar" style="height: 71%"></div>
-                    <div class="bar" style="height: 88%"></div>
-                    <div class="bar" style="height: 62%"></div>
                     <div class="bar" style="height: 45%"></div>
                     <div class="bar" style="height: 22%"></div>
                   </div>
-                </section>
+                </div>
+                <div class="chart-card">
+                  <div class="chart-head">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/></svg>
+                    Top apps
+                  </div>
+                  <ul class="app-list">
+                    <li><span>DisplayMovie</span><span class="app-bar" style="--w: 94%"></span><b>134</b></li>
+                    <li><span>Xcode</span><span class="app-bar" style="--w: 72%"></span><b>91</b></li>
+                    <li><span>Safari</span><span class="app-bar" style="--w: 58%"></span><b>56</b></li>
+                    <li><span>Finder</span><span class="app-bar" style="--w: 28%"></span><b>22</b></li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <!-- Floating callouts -->
+        <div class="float-tag tag-tl"><span>📷</span> 1 frame every 5 s</div>
+        <div class="float-tag tag-tr"><span class="dot-warm"></span> Live · captured 4 sec ago</div>
+        <div class="float-tag tag-bl">SHA-256 dedupe</div>
+        <div class="float-tag tag-br">→ MP4 at midnight</div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────  BENTO SHOWCASE  ───────────────────────────── -->
+    <section id="showcase" class="showcase">
+      <div class="section-head">
+        <span class="section-mark">— Features</span>
+        <h2 class="section-title">Quietly powerful. <em>Loud where it matters.</em></h2>
+      </div>
+
+      <div class="bento">
+
+        <!-- BIG: Interval picker -->
+        <article class="bento-card bento-2x2 card-blue">
+          <div class="bento-eyebrow">CAPTURE INTERVAL</div>
+          <h3 class="bento-title">1 second to 3 hours, your call.</h3>
+          <p class="bento-body">Tap a chip or dial in a custom cadence. We warn you (gently) under 30 s when the storage math gets serious.</p>
+          <div class="bento-art">
+            <div class="chip-rail">
+              <span class="chip-pill">5s</span>
+              <span class="chip-pill">15s</span>
+              <span class="chip-pill">30s</span>
+              <span class="chip-pill">1m</span>
+              <span class="chip-pill active">5m</span>
+              <span class="chip-pill">15m</span>
+              <span class="chip-pill">1h</span>
+              <span class="chip-pill">3h</span>
+            </div>
+            <div class="interval-display">
+              <strong>5</strong><span>min</span>
+              <small>= 96 frames over an 8h day</small>
+            </div>
+          </div>
+        </article>
+
+        <!-- Sharp: Pixel dedupe -->
+        <article class="bento-card bento-1x1 card-amber">
+          <div class="bento-eyebrow">DEDUPE</div>
+          <h3 class="bento-title">Pixel-exact, byte for byte.</h3>
+          <p class="bento-body">SHA-256 over raw RGBA. Identical frame → discarded. An untouched screen costs zero disk.</p>
+          <div class="bento-art mono-art">
+            <div class="hash-line"><span>frame 421</span><code>3a8c…f9</code><span class="ok">KEEP</span></div>
+            <div class="hash-line"><span>frame 422</span><code>3a8c…f9</code><span class="drop">DROP</span></div>
+            <div class="hash-line"><span>frame 423</span><code>b2e1…07</code><span class="ok">KEEP</span></div>
+          </div>
+        </article>
+
+        <!-- Sharp: Multi-display -->
+        <article class="bento-card bento-1x1 card-purple">
+          <div class="bento-eyebrow">MULTI-DISPLAY</div>
+          <h3 class="bento-title">Stitched to your arrangement.</h3>
+          <p class="bento-body">Pick which screens to capture. They composite preserving your real layout.</p>
+          <div class="bento-art">
+            <div class="display-grid">
+              <div class="display d1">1</div>
+              <div class="display d2 main">2</div>
+              <div class="display d3">3</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Wide: OCR search -->
+        <article class="bento-card bento-2x1 card-indigo">
+          <div class="bento-eyebrow">SEARCHABLE TIMELINE</div>
+          <h3 class="bento-title">Find any moment by the text on screen.</h3>
+          <p class="bento-body">Every screenshot is OCR-indexed locally with Apple Vision into a SQLite FTS5 store. Type a phrase, jump to that frame.</p>
+          <div class="bento-art">
+            <div class="search-bar">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              <em>AWS Console</em>
+              <span class="search-count">4 matches</span>
+            </div>
+            <div class="search-results">
+              <div class="res-row"><span class="res-time">09:12</span><span class="res-app">Safari</span><span class="res-snip">…CloudFront <mark>AWS Console</mark>…</span></div>
+              <div class="res-row"><span class="res-time">10:47</span><span class="res-app">Chrome</span><span class="res-snip">…IAM in <mark>AWS Console</mark>…</span></div>
+              <div class="res-row"><span class="res-time">14:03</span><span class="res-app">Safari</span><span class="res-snip">…S3 → <mark>AWS Console</mark> → Buckets…</span></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Sharp: Privacy -->
+        <article class="bento-card bento-1x1 card-green">
+          <div class="bento-eyebrow">PRIVACY</div>
+          <h3 class="bento-title">Nothing leaves your Mac.</h3>
+          <p class="bento-body">OCR is local. Storage is local. The only outbound call is to YouTube — only if you explicitly connect.</p>
+          <div class="bento-art net-art">
+            <div class="net-row"><span class="dot-green"></span> Local OCR (Vision)</div>
+            <div class="net-row"><span class="dot-green"></span> Local SQLite + FTS5</div>
+            <div class="net-row"><span class="dot-green"></span> Keychain refresh token</div>
+            <div class="net-row off"><span class="dot-off"></span> Telemetry · disabled</div>
+          </div>
+        </article>
+
+        <!-- Sharp: YouTube -->
+        <article class="bento-card bento-1x1 card-red">
+          <div class="bento-eyebrow">SHARE</div>
+          <h3 class="bento-title">Auto-upload to YouTube.</h3>
+          <p class="bento-body">OAuth once. Then each compile flies up with the title format and visibility you set.</p>
+          <div class="bento-art">
+            <div class="yt-card">
+              <div class="yt-thumb">
+                <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+              </div>
+              <div class="yt-meta">
+                <strong>DisplayMovie · 2026-05-15</strong>
+                <small>Private · 0:16 · just uploaded</small>
               </div>
             </div>
           </div>
-          <div class="film-frame"></div>
-          <div class="film-frame"></div>
-          <div class="film-frame"></div>
-        </div>
-        <div class="time-counter" aria-hidden="true">
-          <span class="time-num" id="hero-time">00:00:00</span>
-          <span class="time-label">elapsed today</span>
-        </div>
+        </article>
+
+        <!-- Wide: Schedule -->
+        <article class="bento-card bento-2x1 card-orange">
+          <div class="bento-eyebrow">SCHEDULE</div>
+          <h3 class="bento-title">Compile when you want, how often you want.</h3>
+          <p class="bento-body">Four triggers — local midnight, on-quit, on-sleep, custom time. Combine them. Or hit "Compile now" from the menubar.</p>
+          <div class="bento-art trigger-grid">
+            <div class="trigger on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 14 14"/></svg><span>Midnight</span></div>
+            <div class="trigger on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/></svg><span>On quit</span></div>
+            <div class="trigger"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><span>On sleep</span></div>
+            <div class="trigger on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg><span>3:00 AM</span></div>
+          </div>
+        </article>
+
+        <!-- Sharp: Lifecycle -->
+        <article class="bento-card bento-1x1 card-cyan">
+          <div class="bento-eyebrow">LIFECYCLE</div>
+          <h3 class="bento-title">Polite by default.</h3>
+          <p class="bento-body">Pauses on lock, sleep, and below your battery threshold. Auto-launch via SMAppService.</p>
+          <div class="bento-art">
+            <div class="state-grid">
+              <span class="state-pill"><span class="dot-green"></span> Capturing</span>
+              <span class="state-pill"><span class="dot-amber"></span> Screen locked</span>
+              <span class="state-pill"><span class="dot-red"></span> Battery low</span>
+            </div>
+          </div>
+        </article>
+
       </div>
     </section>
 
     <!-- ─────────────────────────────  HOW IT WORKS  ───────────────────────────── -->
     <section id="how" class="how">
       <div class="section-head">
-        <span class="section-mark">— 01</span>
-        <h2 class="section-title">
-          Four moving parts. <em>One quiet film.</em>
-        </h2>
+        <span class="section-mark">— How it works</span>
+        <h2 class="section-title">Four moving parts. <em>One quiet film.</em></h2>
       </div>
       <ol class="steps">
         <li class="step">
           <span class="step-num">01</span>
           <h3>Capture</h3>
-          <p>Every <strong>1 second</strong> to <strong>3 hours</strong>, DisplayMovie takes a silent screenshot via Apple's ScreenCaptureKit. Multi-display? It composites them preserving your screen arrangement.</p>
+          <p>Every <strong>1 second to 3 hours</strong>, a silent screenshot via ScreenCaptureKit. Multi-display? Composited preserving your screen arrangement.</p>
           <code>captureIntervalSeconds: 300</code>
         </li>
         <li class="step">
           <span class="step-num">02</span>
           <h3>Dedupe</h3>
-          <p>Each frame is SHA-256 hashed against the previous. Pixel-identical frames are discarded. An untouched screen never makes it into the film — and never costs you disk space.</p>
+          <p>Each frame SHA-256 hashed against the previous. <strong>Pixel-identical → dropped.</strong> An untouched screen never costs you disk.</p>
           <code>SHA256 ≡ skip</code>
         </li>
         <li class="step">
           <span class="step-num">03</span>
           <h3>Compile</h3>
-          <p>At local midnight, on quit, on sleep, or at a custom time, the day's unique frames stitch into a single MP4 via AVFoundation. H.264 / HEVC, 1–60 fps, native / 4K / 1080p / 720p.</p>
+          <p>At midnight, on quit, on sleep, or a custom time, the day's unique frames stitch into <strong>a single MP4</strong> via AVFoundation.</p>
           <code>AVAssetWriter → mp4</code>
         </li>
         <li class="step">
           <span class="step-num">04</span>
           <h3>Share</h3>
-          <p>OCR-search any visible text across the entire timeline. Build a movie from any date range. Auto-upload to YouTube with the title format and visibility of your choice.</p>
+          <p>OCR-search any visible text. Build a movie from any date range. <strong>Auto-upload to YouTube</strong> with title format and visibility you set.</p>
           <code>Vision · FTS5 · YouTube API</code>
         </li>
       </ol>
     </section>
 
-    <!-- ─────────────────────────────  BIG SHOT  ───────────────────────────── -->
-    <section class="big-shot">
-      <div class="section-head">
-        <span class="section-mark">— 02</span>
-        <h2 class="section-title">A unified window. <em>One sidebar.</em></h2>
-        <p class="section-lede">Dashboard, Capture, Output, Storage, Schedule, Appearance, About, and Sharing — every surface in one place, with the macOS 26 Liquid-Glass design language.</p>
-      </div>
-      <figure class="screen-frame" id="big-shot-figure">
-        <!-- Inline CSS mock by default. Replaced with screenshots/01-dashboard.png by JS if available. -->
-        <div class="window-mock big" id="big-shot-mock">
-          <div class="window-bar"><div class="window-dots"><span class="wdot red"></span><span class="wdot amber"></span><span class="wdot green"></span></div></div>
-          <div class="window-body">
-            <aside class="window-side">
-              <div class="side-brand">
-                <div class="side-logo">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></svg>
-                </div>
-                <div class="side-title"><strong>DisplayMovie</strong><span>v0.1.0</span></div>
-              </div>
-              <div class="side-group">
-                <div class="side-label">Overview</div>
-                <div class="side-item active">
-                  <svg class="side-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="20" x2="3" y2="10"/><line x1="9" y1="20" x2="9" y2="4"/><line x1="15" y1="20" x2="15" y2="14"/><line x1="21" y1="20" x2="21" y2="7"/></svg>
-                  Dashboard
-                </div>
-              </div>
-              <div class="side-group">
-                <div class="side-label">Settings</div>
-                <div class="side-item">
-                  <svg class="side-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-                  Capture
-                </div>
-                <div class="side-item">
-                  <svg class="side-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
-                  Output
-                </div>
-                <div class="side-item">
-                  <svg class="side-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
-                  Storage
-                </div>
-                <div class="side-item">
-                  <svg class="side-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                  Schedule
-                </div>
-              </div>
-              <div class="side-group">
-                <div class="side-label">Sharing</div>
-                <div class="side-item">
-                  <svg class="side-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
-                  YouTube
-                </div>
-              </div>
-            </aside>
-            <section class="window-main">
-              <div class="page-header">
-                <div class="ph-badge"></div>
-                <div class="ph-text">
-                  <h3>Dashboard</h3>
-                  <small>Friday, 15 May 2026</small>
-                </div>
-              </div>
-              <div class="stat-row">
-                <div class="stat-card"><span class="stat-num">317</span><span class="stat-label">frames today</span></div>
-                <div class="stat-card"><span class="stat-num">5h&nbsp;42m</span><span class="stat-label">active time</span></div>
-                <div class="stat-card"><span class="stat-num">12</span><span class="stat-label">apps seen</span></div>
-              </div>
-              <div class="chart">
-                <div class="bar" style="height: 18%"></div>
-                <div class="bar" style="height: 28%"></div>
-                <div class="bar" style="height: 45%"></div>
-                <div class="bar" style="height: 67%"></div>
-                <div class="bar" style="height: 82%"></div>
-                <div class="bar" style="height: 95%"></div>
-                <div class="bar" style="height: 88%"></div>
-                <div class="bar" style="height: 76%"></div>
-                <div class="bar" style="height: 92%"></div>
-                <div class="bar" style="height: 84%"></div>
-                <div class="bar" style="height: 69%"></div>
-                <div class="bar" style="height: 51%"></div>
-                <div class="bar" style="height: 38%"></div>
-                <div class="bar" style="height: 22%"></div>
-              </div>
-            </section>
-          </div>
-        </div>
-      </figure>
-    </section>
-
-    <!-- ─────────────────────────────  FEATURE CONSTELLATION  ───────────────────────────── -->
-    <section id="features" class="features">
-      <div class="section-head">
-        <span class="section-mark">— 03</span>
-        <h2 class="section-title">Built for <em>actual</em> use.</h2>
-        <p class="section-lede">Every behaviour, every cadence, every output format is a toggle away.</p>
-      </div>
-      <div class="feature-grid">
-
-        <article class="card tall">
-          <span class="card-icon" data-tint="blue">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg>
-          </span>
-          <h3>1 second → 3 hours</h3>
-          <p>Pick anything from a frantic 1 s cadence to a relaxed 3 h. We warn you (gently) when you're under 30 s.</p>
-          <code class="card-code">Capture every 5 sec</code>
-        </article>
-
-        <article class="card">
-          <span class="card-icon" data-tint="amber">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 12h6"/><path d="M12 9v6"/></svg>
-          </span>
-          <h3>Pixel-exact dedupe</h3>
-          <p>If a frame is byte-identical to the last, it's gone. SHA-256 over raw RGBA.</p>
-        </article>
-
-        <article class="card">
-          <span class="card-icon" data-tint="purple">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><line x1="8" y1="20" x2="16" y2="20"/><line x1="12" y1="18" x2="12" y2="22"/></svg>
-          </span>
-          <h3>Multi-display</h3>
-          <p>Pick which displays to capture. We composite them preserving your arrangement.</p>
-        </article>
-
-        <article class="card wide">
-          <span class="card-icon" data-tint="indigo">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          </span>
-          <h3>OCR-searchable timeline</h3>
-          <p>Every screenshot is indexed locally via Apple's Vision framework into a SQLite FTS5 store. Type a word, find the frame, jump to that moment of your day. Zero cloud round-trips.</p>
-          <code class="card-code">"AWS Console" → 4 matches across Wed</code>
-        </article>
-
-        <article class="card">
-          <span class="card-icon" data-tint="orange">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="2"/><line x1="4" y1="10" x2="20" y2="10"/><line x1="9" y1="3" x2="9" y2="7"/><line x1="15" y1="3" x2="15" y2="7"/></svg>
-          </span>
-          <h3>Four compile triggers</h3>
-          <p>Midnight, on-quit, on-sleep, and a custom time. Pick any combination.</p>
-        </article>
-
-        <article class="card">
-          <span class="card-icon" data-tint="red">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
-          </span>
-          <h3>YouTube auto-upload</h3>
-          <p>OAuth once, then every compile flies up with the title format & visibility you set.</p>
-        </article>
-
-        <article class="card">
-          <span class="card-icon" data-tint="cyan">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4-9 4-9-4Z"/><path d="M3 12l9 4 9-4"/><path d="M3 17l9 4 9-4"/></svg>
-          </span>
-          <h3>Range compiler</h3>
-          <p>Build a movie from any date range with any sampling cadence. Last week. Last month. Just Tuesdays.</p>
-        </article>
-
-        <article class="card wide warm">
-          <span class="card-icon" data-tint="warm">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 12l2 2 4-4"/></svg>
-          </span>
-          <h3>Lifecycle aware</h3>
-          <p>Pauses on screen-lock, on system sleep, and below your battery threshold. Resumes automatically. Optional launch-at-login via <code>SMAppService</code>.</p>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- ─────────────────────────────  PRIVACY  ───────────────────────────── -->
+    <!-- ─────────────────────────────  PRIVACY (compact, no big void)  ───────────────────────────── -->
     <section id="privacy" class="privacy">
-      <div class="section-head centered">
-        <span class="section-mark">— 04</span>
-        <h2 class="section-title large">
-          Your screen <em>never leaves your Mac.</em>
-        </h2>
-      </div>
-      <p class="privacy-lede">
-        No telemetry. No analytics. No "anonymous diagnostics". OCR runs locally via Apple Vision.
-        The metadata DB lives in your storage folder. Movies live where you put them.
-        The <em>only</em> network call DisplayMovie ever makes is to YouTube — and only if you explicitly connect your account and turn on upload.
-      </p>
-      <div class="privacy-pills">
-        <span class="pill"><span class="pill-dot"></span> Local OCR via Vision</span>
-        <span class="pill"><span class="pill-dot"></span> Local SQLite + FTS5</span>
-        <span class="pill"><span class="pill-dot"></span> Refresh token in Keychain</span>
-        <span class="pill"><span class="pill-dot"></span> Source on GitHub</span>
+      <div class="privacy-card">
+        <div class="privacy-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <path d="m9 12 2 2 4-4"/>
+          </svg>
+        </div>
+        <div class="privacy-text">
+          <span class="section-mark">— Privacy</span>
+          <h2 class="privacy-title">Your screen <em>never leaves your Mac.</em></h2>
+          <p>No telemetry. No analytics. OCR runs locally via Apple Vision. The metadata DB lives in your storage folder. Movies live where you put them. The <em>only</em> network call DisplayMovie ever makes is to YouTube — and only if you explicitly connect and turn on upload.</p>
+          <div class="privacy-pills">
+            <span class="pill"><span class="pill-dot"></span> Local OCR via Vision</span>
+            <span class="pill"><span class="pill-dot"></span> Local SQLite + FTS5</span>
+            <span class="pill"><span class="pill-dot"></span> Refresh token in Keychain</span>
+            <span class="pill"><span class="pill-dot"></span> Source on GitHub</span>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- ─────────────────────────────  SPECS + DOWNLOAD  ───────────────────────────── -->
+    <!-- ─────────────────────────────  DOWNLOAD  ───────────────────────────── -->
     <section id="download" class="download">
-      <div class="section-head">
-        <span class="section-mark">— 05</span>
-        <h2 class="section-title">Download.</h2>
-        <p class="section-lede">Signed and notarized for macOS Gatekeeper. Apple Silicon.</p>
-      </div>
       <div class="download-card">
-        <div class="dl-headline">
-          <div class="dl-mark">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="3" y="6" width="18" height="12" rx="2"></rect>
-              <line x1="3" y1="9" x2="21" y2="9"></line>
-              <line x1="3" y1="15" x2="21" y2="15"></line>
-            </svg>
-          </div>
-          <div>
-            <strong>DisplayMovie</strong>
-            <span class="dl-version">v0.1.0 · Apple Silicon · ≈&nbsp;12 MB</span>
-          </div>
+        <div class="dl-left">
+          <span class="section-mark">— Download</span>
+          <h2 class="dl-title">Get DisplayMovie.</h2>
+          <p class="dl-sub">Signed and notarized for macOS Gatekeeper. Apple Silicon.</p>
+          <a class="btn primary big" id="download-button" href="https://github.com/XploreDatum/DisplayMovie-releases/releases/latest">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m6 9 6 6 6-6"/><path d="M5 21h14"/></svg>
+            Download .dmg
+          </a>
+          <p class="dl-version-line">
+            <span class="dl-version">v0.1.0 · Apple Silicon · ≈ 12 MB</span>
+          </p>
         </div>
-        <a class="btn primary big" id="download-button" href="https://github.com/XploreDatum/DisplayMovie-releases/releases/latest">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m6 9 6 6 6-6"/><path d="M5 21h14"/></svg>
-          Download .dmg
-        </a>
-        <dl class="specs">
-          <div><dt>Requires</dt><dd>macOS 14 Sonoma or later</dd></div>
-          <div><dt>Architecture</dt><dd>Apple Silicon (arm64)</dd></div>
-          <div><dt>Permissions</dt><dd>Screen Recording</dd></div>
-          <div><dt>Source</dt><dd><a href="https://github.com/XploreDatum/DisplayMovie-releases">github.com/XploreDatum/DisplayMovie-releases</a></dd></div>
-        </dl>
+        <div class="dl-right">
+          <dl class="specs">
+            <div><dt>Requires</dt><dd>macOS 14 Sonoma or later</dd></div>
+            <div><dt>Architecture</dt><dd>Apple Silicon (arm64)</dd></div>
+            <div><dt>Permissions</dt><dd>Screen Recording</dd></div>
+            <div><dt>Source</dt><dd><a href="https://github.com/XploreDatum/DisplayMovie-releases">XploreDatum/DisplayMovie-releases</a></dd></div>
+            <div><dt>License</dt><dd>Proprietary © XploreDatum</dd></div>
+          </dl>
+        </div>
       </div>
     </section>
 
     <!-- ─────────────────────────────  FAQ  ───────────────────────────── -->
     <section class="faq">
       <div class="section-head">
-        <span class="section-mark">— 06</span>
+        <span class="section-mark">— FAQ</span>
         <h2 class="section-title">Quick answers.</h2>
       </div>
       <div class="faq-grid">
         <details>
           <summary>Does it slow my Mac down?</summary>
-          <p>Captures take a few hundred milliseconds via ScreenCaptureKit and happen on your chosen interval. The default 5-minute cadence is undetectable in practice. The dedupe SHA-256 over a Retina frame is &lt; 100 ms on Apple Silicon.</p>
+          <p>Captures take a few hundred milliseconds via ScreenCaptureKit on your chosen interval. The default 5-minute cadence is undetectable in practice. SHA-256 over a Retina frame is &lt; 100 ms on Apple Silicon.</p>
         </details>
         <details>
-          <summary>How much disk space will it use?</summary>
-          <p>Each Retina PNG ranges 1–5 MB depending on content. At 5-min intervals over an 8-hour day, expect ~300–500 MB before dedupe. With Keep&nbsp;Screenshots&nbsp;After&nbsp;Compile off, the day's PNGs are deleted once the MP4 is built.</p>
+          <summary>How much disk space?</summary>
+          <p>Retina PNGs run 1–5 MB each. At 5-min intervals over an 8-hour day, expect ~300–500 MB before dedupe. With Keep Screenshots After Compile off, the day's PNGs are deleted once the MP4 is built.</p>
         </details>
         <details>
           <summary>Why two permission prompts on first launch?</summary>
-          <p>macOS gates screen recording twice: a coarse "Screen Recording" permission in System Settings, plus a per-app dialog asking to "bypass the system picker". The wizard surfaces both inline so it's not a surprise later.</p>
-        </details>
-        <details>
-          <summary>Can I upload to anything other than YouTube?</summary>
-          <p>Not in v1. The architecture (`Sharing/YouTubeService.swift`) is generic enough that adding Vimeo or self-hosted upload is a single new file.</p>
+          <p>macOS gates screen recording twice: a coarse "Screen Recording" toggle in System Settings, plus a per-app dialog asking to "bypass the system picker". The wizard surfaces both inline so they're not a surprise later.</p>
         </details>
         <details>
           <summary>What about Intel Macs?</summary>
-          <p>Currently Apple Silicon only. The codebase compiles fine for x86_64 but ScreenCaptureKit's performance characteristics differ enough on Intel that we don't want to ship a build we haven't tuned.</p>
+          <p>Currently Apple Silicon only. The codebase compiles for x86_64 but ScreenCaptureKit's performance characteristics on Intel haven't been tuned, so we don't want to ship that build yet.</p>
+        </details>
+        <details>
+          <summary>Other upload targets?</summary>
+          <p>Only YouTube in v1. The architecture is generic — Vimeo or self-hosted upload is a single new file.</p>
         </details>
         <details>
           <summary>Is it open source?</summary>
-          <p>The release artifacts and this site are public at <a href="https://github.com/XploreDatum/DisplayMovie-releases">XploreDatum/DisplayMovie-releases</a>. The application source is currently kept private while we polish v1.</p>
+          <p>The release artifacts and this site are public at <a href="https://github.com/XploreDatum/DisplayMovie-releases">XploreDatum/DisplayMovie-releases</a>. App source is currently private while we polish v1.</p>
         </details>
       </div>
     </section>
@@ -483,13 +459,13 @@
     <div class="foot-grid">
       <div class="foot-brand">
         <span class="brand-mark">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="3" y1="15" x2="21" y2="15"></line></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></svg>
         </span>
         <strong>DisplayMovie</strong>
       </div>
       <nav class="foot-links" aria-label="Footer">
+        <a href="#showcase">Features</a>
         <a href="#how">How it works</a>
-        <a href="#features">Features</a>
         <a href="#privacy">Privacy</a>
         <a href="#download">Download</a>
         <a href="https://github.com/XploreDatum/DisplayMovie-releases">GitHub</a>
