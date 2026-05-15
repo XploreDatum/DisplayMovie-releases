@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DisplayMovie — An automatic timelapse of your Mac.</title>
-  <meta name="description" content="DisplayMovie quietly captures your screen on your interval, drops idle frames, and stitches the rest into a daily film. Local. Searchable. Ships to YouTube." />
-  <meta name="theme-color" content="#06060a" />
-  <meta property="og:title" content="DisplayMovie — An automatic timelapse of your Mac." />
-  <meta property="og:description" content="An automatic timelapse of every day on your Mac." />
+  <title>DisplayMovie — A timelapse of every day on your Mac.</title>
+  <meta name="description" content="DisplayMovie quietly captures your Mac on your interval, drops idle frames, and stitches the rest into a daily film. Local. Searchable. Ships to YouTube." />
+  <meta name="theme-color" content="#f5f5f7" />
+  <meta name="theme-color" content="#0a0a0c" media="(prefers-color-scheme: dark)" />
+
+  <meta property="og:title" content="DisplayMovie — A timelapse of every day on your Mac." />
+  <meta property="og:description" content="A quiet, local timelapse of your day. Built for macOS." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://displaymovie.vercel.app" />
   <meta property="og:image" content="https://displaymovie.vercel.app/screenshots/01-dashboard.png" />
@@ -15,17 +17,12 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400..600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=JetBrains+Mono:wght@400..600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Ambient: aurora -->
-  <div class="atmos" aria-hidden="true">
-    <div class="halo halo-a"></div>
-    <div class="halo halo-b"></div>
-  </div>
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="nav">
     <a class="brand" href="/">
@@ -44,7 +41,7 @@
     </a>
     <nav class="nav-links" aria-label="Primary">
       <a href="#capture">Capture</a>
-      <a href="#math">Output</a>
+      <a href="#output">Output</a>
       <a href="#share">Share</a>
       <a href="#privacy">Privacy</a>
     </nav>
@@ -59,63 +56,53 @@
 
   <main id="main">
 
-    <!-- ────────────────────  HERO  ──────────────────── -->
+    <!-- ───────────  HERO  ─────────── -->
     <section class="hero">
-      <span class="pill">
-        <span class="pill-dot"></span>
-        v0.1.0 · macOS 14+ · Apple Silicon
-      </span>
-      <h1>
-        An automatic <em>timelapse</em><br/>
-        of every day on your&nbsp;Mac.
-      </h1>
-      <p class="hero-sub">
-        Captures every <em>1 s to 3 h</em>, drops identical frames, stitches what's
-        left into a daily film. Local. Searchable. Ships to YouTube on demand.
-      </p>
-      <div class="hero-cta">
-        <a class="btn primary xl" href="#download">
-          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m6 9 6 6 6-6"/><path d="M5 21h14"/></svg>
-          Download for Mac
-        </a>
-        <a class="btn ghost xl" href="https://github.com/XploreDatum/DisplayMovie-releases" target="_blank" rel="noopener">
-          Source <span class="arr">↗</span>
-        </a>
+      <div class="hero-inner">
+        <span class="kicker">v0.1.0 · Designed for macOS</span>
+        <h1>A quiet timelapse of every&nbsp;day on your Mac.</h1>
+        <p class="sub">Captures every <em>1 second to 3 hours</em>, drops identical frames, stitches what's left into a daily film. Search visible text. Ship it to YouTube. Stays entirely on your machine.</p>
+        <div class="cta">
+          <a class="btn primary lg" href="#download">
+            <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m6 9 6 6 6-6"/><path d="M5 21h14"/></svg>
+            Download for Mac
+          </a>
+          <a class="btn link" href="https://github.com/XploreDatum/DisplayMovie-releases" target="_blank" rel="noopener">View source <span class="arr">›</span></a>
+        </div>
+        <p class="micro">Free. Apple Silicon. macOS 14 Sonoma or later.</p>
       </div>
 
       <div class="hero-stage">
-        <div class="hero-bloom" aria-hidden="true"></div>
+        <div class="hero-glow" aria-hidden="true"></div>
         <figure class="hero-shot">
           <img src="screenshots/01-dashboard.png"
-               alt="DisplayMovie Dashboard — sidebar with Dashboard / Capture / Output / Storage / Schedule / Appearance / About / YouTube, three stat cards (Frames captured, Active time, Apps seen), captures-by-hour bar chart, top-apps list." />
+               alt="DisplayMovie Dashboard — sidebar with Overview / Settings / Sharing groups, three stat cards (Frames captured, Active time, Apps seen), captures-by-hour bar chart and top-apps list." />
         </figure>
 
-        <!-- Floating annotation cards -->
         <aside class="ann ann-1" aria-hidden="true">
           <span class="ann-pulse"></span>
           <div>
             <strong>Capturing</strong>
-            <small>1 frame every 5 min</small>
+            <small>every 5 minutes</small>
           </div>
         </aside>
         <aside class="ann ann-2" aria-hidden="true">
-          <strong>317</strong>
-          <small>frames today</small>
+          <strong class="big">317</strong>
+          <small>frames captured today</small>
         </aside>
         <aside class="ann ann-3" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
           <div>
-            <strong>OCR-searchable</strong>
-            <small>Vision · local · FTS5</small>
+            <strong>Searchable</strong>
+            <small>by text on screen</small>
           </div>
         </aside>
-        <aside class="ann ann-4" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="6 3 20 12 6 21 6 3"/></svg>
-          <small>MP4 at midnight</small>
-        </aside>
       </div>
+    </section>
 
-      <ul class="trust" aria-label="Quick facts">
+    <!-- ───────────  TRUST STRIP  ─────────── -->
+    <section class="trust">
+      <ul>
         <li><b>1 s – 3 h</b><span>capture intervals</span></li>
         <li><b>SHA-256</b><span>pixel-exact dedupe</span></li>
         <li><b>100%</b><span>local processing</span></li>
@@ -123,143 +110,140 @@
       </ul>
     </section>
 
-    <!-- ────────────────────  CAPTURE  ──────────────────── -->
-    <section id="capture" class="feat">
-      <header class="feat-head">
-        <span class="eye"><span class="eye-dot"></span> Capture</span>
-        <h2>Set your interval. <em>Forget about it.</em></h2>
-        <p>From every second to every three hours. We warn you gently when you'd rack up tens of thousands of frames per day. Multi-display selection composites preserving your arrangement.</p>
-      </header>
-      <figure class="feat-shot">
-        <img src="screenshots/02-capture.png" alt="Capture settings: interval chips from 5 s to 3 h, custom h-m-s stepper, display picker, pause-on-lock toggles." loading="lazy"/>
+    <!-- ───────────  CAPTURE  ─────────── -->
+    <section id="capture" class="row">
+      <div class="row-text">
+        <span class="eyebrow"><span class="eye-dot"></span> Capture</span>
+        <h2>Set your interval. <span class="hl">Forget about it.</span></h2>
+        <p>From every second to every three hours. Tap a chip or dial in a custom <code>h&nbsp;:&nbsp;m&nbsp;:&nbsp;s</code>. Multi-display selection composites preserving your arrangement. The app gently warns you under 30 s when the storage math turns serious.</p>
+        <ul class="bul">
+          <li>Strict pixel-exact dedupe via SHA-256 of raw RGBA</li>
+          <li>Auto-pause on lock, sleep, low battery</li>
+          <li>Per-display Retina-aware composition</li>
+        </ul>
+      </div>
+      <figure class="row-shot">
+        <img src="screenshots/02-capture.png" alt="Capture settings: interval chips, h-m-s stepper, display picker, pause toggles." loading="lazy"/>
       </figure>
     </section>
 
-    <!-- ────────────────────  LIVE MATH  ──────────────────── -->
-    <section id="math" class="math">
-      <header class="feat-head center">
-        <span class="eye"><span class="eye-dot"></span> Output</span>
-        <h2>The math, <em>visible.</em></h2>
+    <!-- ───────────  OUTPUT / LIVE MATH  ─────────── -->
+    <section id="output" class="output">
+      <header class="row-head center">
+        <span class="eyebrow"><span class="eye-dot"></span> Output</span>
+        <h2>The math, made visible.</h2>
         <p>Three live tiles recompute the instant you nudge the interval. The daily MP4 lands at midnight — or whenever you say.</p>
       </header>
-      <div class="math-grid">
-        <article class="metric metric-amber">
-          <div class="metric-ic">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M9 1h6M12 5v4l3 2"/></svg>
-          </div>
+      <div class="metrics">
+        <article class="metric">
+          <span class="metric-ic" data-tint="blue">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M9 1h6M12 5v4l3 2"/></svg>
+          </span>
           <div class="metric-num">0.10<span>/min</span></div>
-          <p>Captures per minute at a 10-min interval.</p>
+          <p>captures per minute at a 10-min interval</p>
         </article>
-        <article class="metric metric-blue">
-          <div class="metric-ic">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-          </div>
+        <article class="metric featured">
+          <span class="metric-ic" data-tint="purple">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          </span>
           <div class="metric-num">6.00<span>/hour</span></div>
-          <p>What lands in your day folder each hour.</p>
+          <p>what lands in your day folder each hour</p>
         </article>
-        <article class="metric metric-purple">
-          <div class="metric-ic">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/></svg>
-          </div>
+        <article class="metric">
+          <span class="metric-ic" data-tint="orange">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/></svg>
+          </span>
           <div class="metric-num">144<span>/day</span></div>
-          <p>Worth ≈ 4.8 seconds of movie at 30 fps.</p>
+          <p>worth ≈ 4.8 seconds at 30 fps</p>
         </article>
       </div>
-      <figure class="feat-shot tight">
-        <img src="screenshots/03-output.png" alt="Output settings: capture rate tiles, codec and container segmented controls." loading="lazy"/>
+      <figure class="row-shot center-shot">
+        <img src="screenshots/03-output.png" alt="Output settings: capture rate tiles, codec and container segmented controls, FPS stepper." loading="lazy"/>
       </figure>
     </section>
 
-    <!-- ────────────────────  SHARE / YOUTUBE  ──────────────────── -->
-    <section id="share" class="feat reverse">
-      <header class="feat-head">
-        <span class="eye"><span class="eye-dot"></span> Share</span>
-        <h2>Direct to your <em>YouTube channel.</em></h2>
-        <p>Sign in once via your browser. Pick a title format — <code>{date}</code> · <code>{day}</code> · <code>{filename}</code>. Choose visibility. Every compile flies up automatically — and optionally deletes the local file once YouTube confirms.</p>
-        <ul class="micro">
-          <li>OAuth refresh token in Keychain — never in defaults</li>
+    <!-- ───────────  SHARE  ─────────── -->
+    <section id="share" class="row reverse">
+      <figure class="row-shot">
+        <img src="screenshots/08-youtube.png" alt="YouTube Sharing tab: OAuth status, title format, visibility chooser, auto-upload toggle." loading="lazy"/>
+      </figure>
+      <div class="row-text">
+        <span class="eyebrow"><span class="eye-dot"></span> Share</span>
+        <h2>Direct to your <span class="hl">YouTube channel.</span></h2>
+        <p>Sign in once via your browser. Pick a title format with placeholders like <code>{date}</code>, <code>{day}</code>, <code>{filename}</code>. Choose visibility. Every daily compile flies up automatically — and optionally deletes the local file once YouTube confirms.</p>
+        <ul class="bul">
+          <li>OAuth refresh token stored in macOS Keychain</li>
           <li>Resumable upload via YouTube Data API v3</li>
-          <li>Manual upload button on Dashboard + range-compile sheet</li>
+          <li>Manual upload button on Dashboard and range-compile sheet</li>
         </ul>
-      </header>
-      <figure class="feat-shot">
-        <img src="screenshots/08-youtube.png" alt="YouTube Sharing tab: OAuth status, title format with placeholders, visibility chooser, auto-upload toggle, delete-after-upload toggle." loading="lazy"/>
-      </figure>
+      </div>
     </section>
 
-    <!-- ────────────────────  GALLERY (everything else)  ──────────────────── -->
+    <!-- ───────────  GALLERY  ─────────── -->
     <section class="gallery">
-      <header class="feat-head">
-        <span class="eye"><span class="eye-dot"></span> Everything else</span>
+      <header class="row-head">
+        <span class="eyebrow"><span class="eye-dot"></span> Everything else</span>
         <h2>Storage, schedule, appearance, about.</h2>
       </header>
       <div class="gal">
         <article class="gal-card">
-          <figure><img src="screenshots/04-storage.png" alt="Storage settings: folder location, retention chips, keep-screenshots toggle." loading="lazy"/></figure>
-          <div class="gal-body">
-            <h3>Storage</h3>
-            <p>Pick a folder once. Decide whether to keep PNGs after compile; pick retention.</p>
-          </div>
+          <figure><img src="screenshots/04-storage.png" alt="Storage settings: folder, retention." loading="lazy"/></figure>
+          <h3>Storage</h3>
+          <p>Pick a folder once. Decide whether to keep PNGs after compile. Pick a retention.</p>
         </article>
         <article class="gal-card">
-          <figure><img src="screenshots/05-schedule.png" alt="Schedule settings: midnight / on-quit / on-sleep / custom-time triggers." loading="lazy"/></figure>
-          <div class="gal-body">
-            <h3>Schedule</h3>
-            <p>Midnight, on quit, on sleep, custom time. Mix any combination.</p>
-          </div>
+          <figure><img src="screenshots/05-schedule.png" alt="Schedule triggers." loading="lazy"/></figure>
+          <h3>Schedule</h3>
+          <p>Midnight, on quit, on sleep, custom time. Combine any of them.</p>
         </article>
         <article class="gal-card">
-          <figure><img src="screenshots/06-appearance.png" alt="Appearance settings: menubar icon style, blink, login-at-launch, OCR index toggle." loading="lazy"/></figure>
-          <div class="gal-body">
-            <h3>Appearance</h3>
-            <p>Filmstrip / camera / dot menubar icon. Optional blink. Login at launch.</p>
-          </div>
+          <figure><img src="screenshots/06-appearance.png" alt="Appearance settings." loading="lazy"/></figure>
+          <h3>Appearance</h3>
+          <p>Filmstrip, camera, or dot menubar icon. Optional blink. Login at launch.</p>
         </article>
         <article class="gal-card">
-          <figure><img src="screenshots/07-about.png" alt="About: version, permissions status, XploreDatum credits." loading="lazy"/></figure>
-          <div class="gal-body">
-            <h3>About</h3>
-            <p>Both screen-recording permissions in one place — System Settings and the picker bypass.</p>
-          </div>
+          <figure><img src="screenshots/07-about.png" alt="About + permissions." loading="lazy"/></figure>
+          <h3>About</h3>
+          <p>Both screen-recording permissions in one place — Settings and the picker bypass.</p>
         </article>
       </div>
     </section>
 
-    <!-- ────────────────────  HOW IT WORKS  ──────────────────── -->
+    <!-- ───────────  HOW IT WORKS  ─────────── -->
     <section class="how">
-      <header class="feat-head center">
-        <span class="eye"><span class="eye-dot"></span> How it works</span>
-        <h2>Four moving parts. <em>One quiet film.</em></h2>
+      <header class="row-head center">
+        <span class="eyebrow"><span class="eye-dot"></span> How it works</span>
+        <h2>Four moving parts. One quiet film.</h2>
       </header>
       <ol class="steps">
         <li>
-          <span class="step-n">01</span>
+          <span class="step-num">01</span>
           <h3>Capture</h3>
-          <p>A silent ScreenCaptureKit shot, every <strong>1 s to 3 h</strong>.</p>
+          <p>A silent screenshot every <strong>1 s to 3 h</strong> via ScreenCaptureKit.</p>
           <code>SCScreenshotManager</code>
         </li>
         <li>
-          <span class="step-n">02</span>
+          <span class="step-num">02</span>
           <h3>Dedupe</h3>
           <p>SHA-256 vs. the previous frame. <strong>Identical → dropped.</strong></p>
           <code>CryptoKit · SHA256</code>
         </li>
         <li>
-          <span class="step-n">03</span>
+          <span class="step-num">03</span>
           <h3>Compile</h3>
           <p>Unique frames stitched into <strong>one MP4</strong> via AVFoundation.</p>
           <code>AVAssetWriter</code>
         </li>
         <li>
-          <span class="step-n">04</span>
+          <span class="step-num">04</span>
           <h3>Share</h3>
-          <p>OCR search. Any date range. <strong>Optional</strong> YouTube upload.</p>
+          <p>OCR search, any date range, <strong>optional</strong> YouTube upload.</p>
           <code>Vision · FTS5 · YouTube</code>
         </li>
       </ol>
     </section>
 
-    <!-- ────────────────────  PRIVACY  ──────────────────── -->
+    <!-- ───────────  PRIVACY  ─────────── -->
     <section id="privacy" class="privacy">
       <div class="priv">
         <div class="priv-mark" aria-hidden="true">
@@ -268,9 +252,9 @@
             <path d="m9 12 2 2 4-4"/>
           </svg>
         </div>
-        <div class="priv-body">
-          <span class="eye"><span class="eye-dot"></span> Privacy</span>
-          <h2>Your screen <em>never leaves your Mac.</em></h2>
+        <div>
+          <span class="eyebrow"><span class="eye-dot green"></span> Privacy</span>
+          <h2>Your screen <span class="hl green">never leaves your Mac.</span></h2>
           <p>No telemetry. No analytics. OCR runs locally via Apple Vision. The metadata index is a local SQLite file. Movies live where you tell them to. The <em>only</em> outbound call DisplayMovie ever makes is to YouTube — and only after you explicitly connect.</p>
           <div class="chips">
             <span class="chip">Local Vision OCR</span>
@@ -282,18 +266,18 @@
       </div>
     </section>
 
-    <!-- ────────────────────  DOWNLOAD  ──────────────────── -->
+    <!-- ───────────  DOWNLOAD  ─────────── -->
     <section id="download" class="download">
-      <div class="dl">
+      <div class="dl-card">
         <div class="dl-body">
-          <span class="eye"><span class="eye-dot"></span> Download</span>
+          <span class="eyebrow"><span class="eye-dot"></span> Download</span>
           <h2>Get DisplayMovie.</h2>
           <p>Signed and notarized for macOS Gatekeeper. Apple Silicon.</p>
-          <a class="btn primary xl" id="download-btn" href="https://github.com/XploreDatum/DisplayMovie-releases/releases/latest">
+          <a class="btn primary lg" id="download-btn" href="https://github.com/XploreDatum/DisplayMovie-releases/releases/latest">
             <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m6 9 6 6 6-6"/><path d="M5 21h14"/></svg>
             Download .dmg
           </a>
-          <p class="dl-version" id="dl-version">v0.1.0 · Apple Silicon · ≈ 12 MB</p>
+          <p class="dl-meta" id="dl-version">v0.1.0 · Apple Silicon · ≈ 12 MB</p>
         </div>
         <dl class="specs">
           <div><dt>Requires</dt><dd>macOS 14 Sonoma or later</dd></div>
@@ -305,12 +289,12 @@
       </div>
     </section>
 
-    <!-- ────────────────────  FAQ  ──────────────────── -->
+    <!-- ───────────  FAQ  ─────────── -->
     <section class="faq">
-      <header class="feat-head"><span class="eye"><span class="eye-dot"></span> FAQ</span><h2>Quick answers.</h2></header>
+      <header class="row-head"><span class="eyebrow"><span class="eye-dot"></span> FAQ</span><h2>Quick answers.</h2></header>
       <div class="faq-grid">
         <details><summary>Does it slow my Mac down?</summary><p>Captures take a few hundred milliseconds via ScreenCaptureKit on your chosen interval. The default 5-minute cadence is undetectable in practice. SHA-256 over a Retina frame is &lt; 100 ms on Apple Silicon.</p></details>
-        <details><summary>How much disk space?</summary><p>Retina PNGs run 1–5 MB each. At 5-min intervals over an 8-hour day, expect ~300–500 MB before dedupe. With Keep screenshots after compile off, the day's PNGs are deleted once the MP4 is built.</p></details>
+        <details><summary>How much disk space?</summary><p>Retina PNGs run 1–5 MB each. At 5-min intervals over an 8-hour day, expect ~300–500 MB before dedupe. With <em>Keep screenshots after compile</em> off, the day's PNGs are deleted once the MP4 is built.</p></details>
         <details><summary>Why two permission prompts on first launch?</summary><p>macOS gates screen recording twice — a coarse "Screen Recording" toggle in System Settings, plus a per-app dialog asking to "bypass the system picker". The first-launch wizard surfaces both inline.</p></details>
         <details><summary>Intel Macs?</summary><p>Currently Apple Silicon only. The codebase compiles for x86_64 but ScreenCaptureKit's performance on Intel hasn't been tuned, so we don't ship that build yet.</p></details>
         <details><summary>Other upload targets?</summary><p>Only YouTube in v1. The architecture is generic — Vimeo or self-hosted upload is a single new file.</p></details>
@@ -330,7 +314,7 @@
       </div>
       <nav class="foot-links" aria-label="Footer">
         <a href="#capture">Capture</a>
-        <a href="#math">Output</a>
+        <a href="#output">Output</a>
         <a href="#share">Share</a>
         <a href="#privacy">Privacy</a>
         <a href="#download">Download</a>

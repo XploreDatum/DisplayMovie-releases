@@ -1,6 +1,5 @@
-// DisplayMovie · landing page · v4
+// DisplayMovie · landing page · v5
 
-// Resolve the latest DMG URL from the public release (silent on 404).
 (function resolveDownload() {
   const btn = document.getElementById('download-btn');
   if (!btn) return;
@@ -19,5 +18,5 @@
         v.textContent = `${data.tag_name} · Apple Silicon · ${(dmg.size / 1024 / 1024).toFixed(1)} MB`;
       }
     })
-    .catch(() => { /* keep the fallback link */ });
+    .catch(() => {});
 })();
