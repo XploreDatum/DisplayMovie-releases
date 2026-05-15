@@ -75,10 +75,6 @@
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/>
         </svg>
       </button>
-      <a class="btn ghost" href="https://github.com/XploreDatum/DisplayMovie-releases" target="_blank" rel="noopener">
-        <svg class="ic" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-1.92c-3.2.7-3.87-1.54-3.87-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.78 1.2 1.78 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.71 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.77.12 3.06.74.81 1.19 1.84 1.19 3.1 0 4.44-2.7 5.42-5.27 5.7.41.36.78 1.07.78 2.17v3.21c0 .31.21.67.8.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5Z"/></svg>
-        <span class="hide-sm">GitHub</span>
-      </a>
       <a class="btn primary" href="#download">Download</a>
     </div>
   </header>
@@ -96,7 +92,7 @@
             <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m6 9 6 6 6-6"/><path d="M5 21h14"/></svg>
             Download for Mac
           </a>
-          <a class="btn link" href="https://github.com/XploreDatum/DisplayMovie-releases" target="_blank" rel="noopener">View source <span class="arr">›</span></a>
+          <a class="btn link" href="#capture">See what it does <span class="arr">›</span></a>
         </div>
         <p class="micro">Free. Apple Silicon. macOS 14 Sonoma or later.</p>
       </div>
@@ -289,7 +285,7 @@
             <span class="chip">Local Vision OCR</span>
             <span class="chip">SQLite FTS5</span>
             <span class="chip">Keychain refresh token</span>
-            <span class="chip">Source on GitHub</span>
+            <span class="chip">No telemetry</span>
           </div>
         </div>
       </div>
@@ -312,7 +308,7 @@
           <div><dt>Requires</dt><dd>macOS 14 Sonoma or later</dd></div>
           <div><dt>Architecture</dt><dd>Apple Silicon (arm64)</dd></div>
           <div><dt>Permissions</dt><dd>Screen Recording</dd></div>
-          <div><dt>Source</dt><dd><a href="https://github.com/XploreDatum/DisplayMovie-releases">XploreDatum/DisplayMovie-releases</a></dd></div>
+          <div><dt>Distribution</dt><dd>Signed &amp; notarized DMG</dd></div>
           <div><dt>License</dt><dd>Proprietary © XploreDatum</dd></div>
         </dl>
       </div>
@@ -326,8 +322,8 @@
         <details><summary>How much disk space?</summary><p>Retina PNGs run 1–5 MB each. At 5-min intervals over an 8-hour day, expect ~300–500 MB before dedupe. With <em>Keep screenshots after compile</em> off, the day's PNGs are deleted once the MP4 is built.</p></details>
         <details><summary>Why two permission prompts on first launch?</summary><p>macOS gates screen recording twice — a coarse "Screen Recording" toggle in System Settings, plus a per-app dialog asking to "bypass the system picker". The first-launch wizard surfaces both inline.</p></details>
         <details><summary>Intel Macs?</summary><p>Currently Apple Silicon only. The codebase compiles for x86_64 but ScreenCaptureKit's performance on Intel hasn't been tuned, so we don't ship that build yet.</p></details>
-        <details><summary>Other upload targets?</summary><p>Only YouTube in v1. The architecture is generic — Vimeo or self-hosted upload is a single new file.</p></details>
-        <details><summary>Is it open source?</summary><p>The release artifacts and this site are public at <a href="https://github.com/XploreDatum/DisplayMovie-releases">XploreDatum/DisplayMovie-releases</a>. App source is currently private while we polish v1.</p></details>
+        <details><summary>Other upload targets?</summary><p>Only YouTube in v1. We may add Vimeo or self-hosted upload later.</p></details>
+        <details><summary>Updates?</summary><p>Drop the latest signed DMG over the previous one. Settings, screenshots, and movies are preserved across versions.</p></details>
       </div>
     </section>
 
@@ -347,11 +343,10 @@
         <a href="#share">Share</a>
         <a href="#privacy">Privacy</a>
         <a href="#download">Download</a>
-        <a href="https://github.com/XploreDatum/DisplayMovie-releases">GitHub</a>
       </nav>
       <p class="foot-cred">
-        An <a href="https://xploredatum.com">XploreDatum</a> project.<br/>
-        Developed with <span class="heart">♥</span> in <em>Keralam</em>.
+        By <a href="https://xploredatum.com">XploreDatum</a>.<br/>
+        Made with <span class="heart">♥</span> in <em>Keralam</em>.
       </p>
     </div>
   </footer>
