@@ -377,7 +377,10 @@ img { display: block; max-width: 100%; }
   padding: 6px 8px; border-radius: 6px;
   color: var(--ink-2); font-size: 11px;
   cursor: default;
+  display: flex; align-items: center; gap: 8px;
 }
+.side-icon { width: 12px; height: 12px; flex-shrink: 0; color: currentColor; }
+.window-mock.big .side-icon { width: 14px; height: 14px; }
 .window-mock.big .side-item { font-size: 13px; padding: 7px 10px; border-radius: 7px; }
 .side-item.active {
   background: linear-gradient(135deg, rgba(90, 139, 255, 0.18), rgba(126, 109, 255, 0.10));
@@ -844,6 +847,26 @@ details p {
 }
 
 /* ──────────────────────────────────────────────────────
+   A11Y · focus visibility
+   ────────────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--warm);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+button, a, summary, [role="button"] { cursor: pointer; }
+
+/* Skip-link target */
+.skip-link {
+  position: absolute; top: -100px; left: 12px;
+  background: var(--warm); color: var(--void);
+  padding: 10px 16px; border-radius: 8px;
+  font-weight: 600; font-size: 14px;
+  z-index: 100; transition: top 200ms var(--easing);
+}
+.skip-link:focus { top: 12px; }
+
+/* ──────────────────────────────────────────────────────
    ANIMATIONS
    ────────────────────────────────────────────────────── */
 @keyframes fadeUp {
@@ -855,12 +878,13 @@ details p {
   50%      { transform: scale(1.18); }
 }
 
-/* IntersectionObserver-driven reveal */
-.reveal {
+/* IntersectionObserver-driven reveal — only applies when JS is alive (.js class on <html>).
+   Falls back to "always visible" if JS fails, never traps content. */
+.js .reveal {
   opacity: 0; transform: translateY(28px);
   transition: opacity 700ms var(--easing), transform 700ms var(--easing);
 }
-.reveal.in {
+.js .reveal.in {
   opacity: 1; transform: translateY(0);
 }
 

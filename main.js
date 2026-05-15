@@ -87,25 +87,48 @@
   });
 })();
 
-// ─── 5. Resolve direct DMG link from the latest GitHub release ────────
+// ─── 5. Resolve direct DMG link from the latest GitHub release (silent on 404) ────────
 (function resolveDownload() {
   const btn = document.getElementById('download-button');
   if (!btn) return;
+  // Use 'no-store' so we get fresh data when a release lands; tolerate 404 silently.
   fetch('https://api.github.com/repos/XploreDatum/DisplayMovie-releases/releases/latest', {
-    headers: { 'Accept': 'application/vnd.github+json' }
+    headers: { 'Accept': 'application/vnd.github+json' },
+    cache: 'no-store'
   })
-    .then((r) => (r.ok ? r.json() : null))
+    .then((r) => {
+      if (r.status === 404) return null;   // no release yet — fall through to default href
+      if (!r.ok) return null;
+      return r.json();
+    })
     .then((data) => {
       if (!data || !Array.isArray(data.assets)) return;
       const dmg = data.assets.find((a) => /\.dmg$/i.test(a.name));
       if (dmg && dmg.browser_download_url) {
         btn.href = dmg.browser_download_url;
-        // Update the version chip too if present.
         const versionEl = document.querySelector('.dl-version');
         if (versionEl && data.tag_name) {
           versionEl.textContent = `${data.tag_name} · Apple Silicon · ${(dmg.size / 1024 / 1024).toFixed(1)} MB`;
         }
       }
     })
-    .catch(() => { /* leave fallback href */ });
+    .catch(() => { /* network blocked or offline — keep fallback href */ });
+})();
+
+// ─── 6. Replace big-shot CSS mock with real screenshot if it 200s ─────
+(function bigShotScreenshot() {
+  const fig = document.getElementById('big-shot-figure');
+  const mock = document.getElementById('big-shot-mock');
+  if (!fig || !mock) return;
+  const url = 'screenshots/01-dashboard.png';
+  const probe = new Image();
+  probe.onload = () => {
+    if (probe.naturalWidth < 100) return;
+    const img = document.createElement('img');
+    img.src = url;
+    img.alt = 'DisplayMovie dashboard window';
+    img.loading = 'eager';
+    mock.replaceWith(img);
+  };
+  probe.src = url;
 })();
