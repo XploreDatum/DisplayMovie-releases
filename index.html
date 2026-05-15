@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script>document.documentElement.classList.add('js');</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DisplayMovie — Every day, a movie.</title>
-  <meta name="description" content="DisplayMovie quietly captures your Mac on your interval, drops idle frames, and stitches the rest into a daily timelapse. Watch it. Search it. Ship it." />
-  <meta name="theme-color" content="#06060a" />
+  <title>DisplayMovie — A timelapse of your day, on your Mac.</title>
+  <meta name="description" content="DisplayMovie quietly captures your Mac on your interval, drops idle frames, and stitches the rest into a daily timelapse. Watch it. Search it. Ship it to YouTube." />
+  <meta name="theme-color" content="#08080c" />
 
-  <meta property="og:title" content="DisplayMovie — Every day, a movie." />
+  <meta property="og:title" content="DisplayMovie — A timelapse of your day, on your Mac." />
   <meta property="og:description" content="An automatic timelapse of every day on your Mac. Capture, dedupe, compile, share." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://displaymovie.vercel.app" />
@@ -23,19 +22,18 @@
 </head>
 <body>
 
-  <a class="skip-link" href="#main-content">Skip to content</a>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <div class="aurora" aria-hidden="true">
-    <div class="aurora-blob aurora-1"></div>
-    <div class="aurora-blob aurora-2"></div>
-    <div class="aurora-blob aurora-3"></div>
+  <div class="atmos" aria-hidden="true">
+    <div class="blob blob-a"></div>
+    <div class="blob blob-b"></div>
+    <div class="blob blob-c"></div>
   </div>
-  <div class="grain" aria-hidden="true"></div>
 
   <header class="nav">
-    <a class="brand" href="/">
+    <a class="brand" href="/" aria-label="DisplayMovie home">
       <span class="brand-mark">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <rect x="3" y="6" width="18" height="12" rx="2"/>
           <line x1="3" y1="9" x2="21" y2="9"/>
           <line x1="3" y1="15" x2="21" y2="15"/>
@@ -45,295 +43,267 @@
           <line x1="19" y1="10.5" x2="19" y2="13.5"/>
         </svg>
       </span>
-      <span class="brand-name">DisplayMovie</span>
+      <span class="brand-text">DisplayMovie</span>
     </a>
     <nav class="nav-links" aria-label="Primary">
-      <a href="#tour">Tour</a>
-      <a href="#how">How it works</a>
+      <a href="#capture">Capture</a>
+      <a href="#output">Output</a>
+      <a href="#share">Share</a>
       <a href="#privacy">Privacy</a>
     </nav>
     <div class="nav-cta">
-      <a class="btn ghost small" href="https://github.com/XploreDatum/DisplayMovie-releases" target="_blank" rel="noopener">
-        <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-1.92c-3.2.7-3.87-1.54-3.87-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.78 1.2 1.78 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.71 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.77.12 3.06.74.81 1.19 1.84 1.19 3.1 0 4.44-2.7 5.42-5.27 5.7.41.36.78 1.07.78 2.17v3.21c0 .31.21.67.8.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5Z"/></svg>
-        GitHub
+      <a class="btn ghost" href="https://github.com/XploreDatum/DisplayMovie-releases" target="_blank" rel="noopener">
+        <svg class="ic" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-1.92c-3.2.7-3.87-1.54-3.87-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.78 1.2 1.78 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.71 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.77.12 3.06.74.81 1.19 1.84 1.19 3.1 0 4.44-2.7 5.42-5.27 5.7.41.36.78 1.07.78 2.17v3.21c0 .31.21.67.8.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5Z"/></svg>
+        <span class="hide-sm">GitHub</span>
       </a>
-      <a class="btn primary small" href="#download">Download</a>
+      <a class="btn primary" href="#download">Download</a>
     </div>
   </header>
 
-  <main id="main-content">
+  <main id="main">
 
     <!-- ─────────────────────────────  HERO  ───────────────────────────── -->
     <section class="hero">
-      <div class="hero-inner">
-        <div class="hero-text">
-          <div class="kicker">
-            <span class="kicker-dot"></span>
-            v0.1.0 · macOS 14+ · Apple Silicon
-          </div>
-          <h1 class="display">
-            Every day,<br/><em>a&nbsp;movie.</em>
-          </h1>
-          <p class="lede">
-            DisplayMovie quietly captures your Mac on your interval, drops idle frames,
-            and stitches the rest into a daily timelapse. Watch it. Search it. Ship it.
-          </p>
-          <div class="hero-ctas">
-            <a class="btn primary big" href="#download">
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m6 9 6 6 6-6"/><path d="M5 21h14"/></svg>
-              Download for Mac
-            </a>
-            <a class="btn ghost big" href="https://github.com/XploreDatum/DisplayMovie-releases" target="_blank" rel="noopener">
-              View on GitHub <span class="arrow">↗</span>
-            </a>
-          </div>
-          <ul class="hero-meta">
-            <li><strong>1 s – 3 h</strong> intervals</li>
-            <li><strong>100%</strong> local processing</li>
-            <li><strong>0 KB</strong> telemetry</li>
-          </ul>
+      <div class="hero-text">
+        <span class="kicker">
+          <span class="dot"></span>
+          v0.1.0 · macOS 14+ · Apple Silicon
+        </span>
+        <h1>An automatic <em>timelapse</em><br/>of every day on your Mac.</h1>
+        <p class="lede">
+          DisplayMovie quietly snapshots your screen on your interval, drops the
+          frames that didn't change, and stitches the rest into a daily film.
+          Local. Searchable. Optionally shipped to YouTube.
+        </p>
+        <div class="cta-row">
+          <a class="btn primary lg" href="#download">
+            <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m6 9 6 6 6-6"/><path d="M5 21h14"/></svg>
+            Download for Mac
+          </a>
+          <a class="btn ghost lg" href="https://github.com/XploreDatum/DisplayMovie-releases" target="_blank" rel="noopener">
+            View source <span class="arr">→</span>
+          </a>
         </div>
       </div>
 
-      <!-- Hero showpiece: the real Dashboard screenshot -->
       <figure class="hero-shot">
-        <div class="hero-shot-glow" aria-hidden="true"></div>
-        <img src="screenshots/01-dashboard.png" alt="DisplayMovie Dashboard window — sidebar (Dashboard, Capture, Output, Storage, Schedule, Appearance, About, YouTube), three stat cards (frames captured, active time, apps seen), captures-by-hour bar chart, and top-apps list." />
-        <figcaption class="float-tag tag-tl"><span>📷</span> Capture every 5 min</figcaption>
-        <figcaption class="float-tag tag-tr"><span class="dot-warm"></span> Live · 77 frames today</figcaption>
-        <figcaption class="float-tag tag-br">→ MP4 at midnight</figcaption>
+        <img src="screenshots/01-dashboard.png"
+             alt="DisplayMovie Dashboard — sidebar with Dashboard / Capture / Output / Storage / Schedule / Appearance / About / YouTube, three stat cards (Frames captured, Active time, Apps seen), captures-by-hour bar chart, and top-apps list." />
+      </figure>
+
+      <ul class="stats" aria-label="Highlights">
+        <li><strong>1 s – 3 h</strong><span>capture intervals</span></li>
+        <li><strong>SHA-256</strong><span>pixel-exact dedupe</span></li>
+        <li><strong>100%</strong><span>local processing</span></li>
+        <li><strong>0 KB</strong><span>telemetry, ever</span></li>
+      </ul>
+    </section>
+
+    <!-- ─────────────────────────────  ALT ROW · CAPTURE  ───────────────────────────── -->
+    <section id="capture" class="alt-row">
+      <div class="alt-text">
+        <span class="eye"><span class="bullet b-blue"></span> Capture</span>
+        <h2>From <em>once a second</em><br/>to once every three hours.</h2>
+        <p>Tap a chip or dial in any custom h&nbsp;:&nbsp;m&nbsp;:&nbsp;s. Pick which displays to record — multi-monitor stitches into a single composite preserving your real layout. Manual <em>Pause</em> in the menubar; auto-pause on lock, sleep, or below your battery threshold.</p>
+        <ul class="micro">
+          <li>Strict pixel-exact dedupe via SHA-256 of raw RGBA</li>
+          <li>Warning callout under 30 s</li>
+          <li>Per-display Retina-aware composition</li>
+        </ul>
+      </div>
+      <figure class="alt-shot">
+        <img src="screenshots/02-capture.png" alt="Capture settings: interval chips 5 s to 3 h, custom h-m-s stepper, display picker, pause-on-lock toggles." loading="lazy"/>
       </figure>
     </section>
 
-    <!-- ─────────────────────────────  TOUR · screenshot showcase  ───────────────────────────── -->
-    <section id="tour" class="tour">
-      <div class="section-head">
-        <span class="section-mark">— Tour</span>
-        <h2 class="section-title">Every surface, <em>in one window.</em></h2>
-        <p class="section-lede">A single sidebar holds the Dashboard and seven Settings sections. macOS 26 Liquid-Glass throughout. Click the menubar icon, pick a section, that's the whole app.</p>
-      </div>
-
-      <div class="tour-grid">
-
-        <article class="tour-card tour-wide">
-          <div class="tour-meta">
-            <span class="eyebrow"><span class="dot d-blue"></span> CAPTURE</span>
-            <h3>1 second to 3 hours.</h3>
-            <p>Tap a preset chip or dial in a custom h&nbsp;:&nbsp;m&nbsp;:&nbsp;s. We warn you (gently) under 30 s when the storage math gets serious. Multi-display selection composites into a single frame preserving your arrangement.</p>
-          </div>
-          <figure class="tour-shot">
-            <img src="screenshots/02-capture.png" alt="Capture settings: interval chips from 5 s to 3 h, custom HMS stepper, display picker, pause-when-locked toggles." loading="lazy" />
-          </figure>
-        </article>
-
-        <article class="tour-card">
-          <div class="tour-meta">
-            <span class="eyebrow"><span class="dot d-purple"></span> OUTPUT</span>
-            <h3>Live capture rate.</h3>
-            <p>Three tiles — per minute, per hour, per day — recompute the second you change the interval. Pair with H.264 or HEVC, MP4 or MOV, native to 720p.</p>
-          </div>
-          <figure class="tour-shot">
-            <img src="screenshots/03-output.png" alt="Output settings: capture rate tiles (per minute, per hour, per day), codec and container segmented controls, FPS stepper." loading="lazy" />
-          </figure>
-        </article>
-
-        <article class="tour-card">
-          <div class="tour-meta">
-            <span class="eyebrow"><span class="dot d-indigo"></span> STORAGE</span>
-            <h3>Where, and for how long.</h3>
-            <p>Pick the root folder once. Decide whether to keep screenshots after the compile, and how long to keep both screenshots and finished movies.</p>
-          </div>
-          <figure class="tour-shot">
-            <img src="screenshots/04-storage.png" alt="Storage settings: folder location, retention chips, keep-screenshots toggle." loading="lazy" />
-          </figure>
-        </article>
-
-        <article class="tour-card">
-          <div class="tour-meta">
-            <span class="eyebrow"><span class="dot d-orange"></span> SCHEDULE</span>
-            <h3>Four triggers, mix-and-match.</h3>
-            <p>Local midnight, on-quit, on-sleep, or a custom time of day. Combine them. The menubar's "Compile today now" is always there.</p>
-          </div>
-          <figure class="tour-shot">
-            <img src="screenshots/05-schedule.png" alt="Schedule settings: midnight / on-quit / on-sleep / custom-time triggers." loading="lazy" />
-          </figure>
-        </article>
-
-        <article class="tour-card">
-          <div class="tour-meta">
-            <span class="eyebrow"><span class="dot d-pink"></span> APPEARANCE</span>
-            <h3>Menubar your way.</h3>
-            <p>Film-strip, camera, or dot. Optional blink on each capture. Login at launch via SMAppService. OCR text-search index toggleable.</p>
-          </div>
-          <figure class="tour-shot">
-            <img src="screenshots/06-appearance.png" alt="Appearance settings: menubar icon style, blink toggle, login-at-launch, OCR index toggle." loading="lazy" />
-          </figure>
-        </article>
-
-        <article class="tour-card">
-          <div class="tour-meta">
-            <span class="eyebrow"><span class="dot d-gray"></span> ABOUT</span>
-            <h3>Two permissions, one wizard.</h3>
-            <p>macOS gates screen capture twice — Screen Recording in System Settings, plus "bypass private window picker". The wizard surfaces both inline so they're never a surprise.</p>
-          </div>
-          <figure class="tour-shot">
-            <img src="screenshots/07-about.png" alt="About: version, permissions status, XploreDatum credits." loading="lazy" />
-          </figure>
-        </article>
-
-        <article class="tour-card tour-wide">
-          <div class="tour-meta">
-            <span class="eyebrow"><span class="dot d-red"></span> YOUTUBE</span>
-            <h3>Auto-upload to your channel.</h3>
-            <p>OAuth once via your browser. Pick title format (with <code>{date} {day} {time}</code> placeholders), visibility, tags. Then every compile flies up to YouTube — optionally deleting the local file after a successful upload.</p>
-          </div>
-          <figure class="tour-shot">
-            <img src="screenshots/08-youtube.png" alt="YouTube Sharing tab: OAuth status, title format, visibility chooser, auto-upload toggle, delete-after-upload toggle." loading="lazy" />
-          </figure>
-        </article>
-
+    <!-- ─────────────────────────────  ALT ROW · OUTPUT  ───────────────────────────── -->
+    <section id="output" class="alt-row reverse">
+      <figure class="alt-shot">
+        <img src="screenshots/03-output.png" alt="Output settings: capture rate tiles (per minute / per hour / per day), codec and container segmented controls, FPS stepper." loading="lazy"/>
+      </figure>
+      <div class="alt-text">
+        <span class="eye"><span class="bullet b-purple"></span> Output</span>
+        <h2>The math, <em>visible.</em></h2>
+        <p>Three live tiles show captures per minute, per hour, per day — they recompute the instant you change the interval. Pick codec (H.264 / HEVC), container (MP4 / MOV), FPS (1–60), and resolution (native to 720p). The daily MP4 lands at the time you pick.</p>
+        <div class="figures">
+          <div class="fig"><b>0.10</b><span>per minute</span></div>
+          <div class="fig"><b>6.00</b><span>per hour</span></div>
+          <div class="fig"><b>144</b><span>per day</span></div>
+        </div>
       </div>
     </section>
 
-    <!-- ─────────────────────────────  HOW IT WORKS  ───────────────────────────── -->
-    <section id="how" class="how">
-      <div class="section-head">
-        <span class="section-mark">— How it works</span>
-        <h2 class="section-title">Four moving parts. <em>One quiet film.</em></h2>
+    <!-- ─────────────────────────────  ALT ROW · YOUTUBE  ───────────────────────────── -->
+    <section id="share" class="alt-row">
+      <div class="alt-text">
+        <span class="eye"><span class="bullet b-red"></span> Share</span>
+        <h2>Direct to your <em>YouTube channel.</em></h2>
+        <p>Sign in once via your browser. Set a title format with placeholders like <code>{date}</code>, <code>{day}</code>, <code>{filename}</code>. Choose visibility — private, unlisted, public. Every daily compile flies up automatically. Optionally delete the local file once YouTube confirms.</p>
+        <ul class="micro">
+          <li>OAuth refresh token in Keychain — never in defaults</li>
+          <li>Resumable upload via YouTube Data API v3</li>
+          <li>Manual upload button on Dashboard and range-compile sheet</li>
+        </ul>
       </div>
+      <figure class="alt-shot">
+        <img src="screenshots/08-youtube.png" alt="YouTube Sharing tab: OAuth status, title format, visibility chooser, auto-upload toggle, delete-after-upload toggle." loading="lazy"/>
+      </figure>
+    </section>
+
+    <!-- ─────────────────────────────  COMPACT GALLERY ───────────────────────────── -->
+    <section class="gallery">
+      <header class="gal-head">
+        <span class="eye"><span class="bullet b-amber"></span> Everything else</span>
+        <h2>Storage, schedule, appearance, and the wizard you'll only see once.</h2>
+      </header>
+      <div class="gal-grid">
+        <article class="gal-card">
+          <figure><img src="screenshots/04-storage.png" alt="Storage settings: folder location, retention chips, keep-screenshots toggle." loading="lazy"/></figure>
+          <h3>Storage</h3>
+          <p>Pick a folder. Decide whether to keep screenshots after the compile, and how long to retain both screenshots and finished movies.</p>
+        </article>
+        <article class="gal-card">
+          <figure><img src="screenshots/05-schedule.png" alt="Schedule settings: midnight / on-quit / on-sleep / custom-time triggers." loading="lazy"/></figure>
+          <h3>Schedule</h3>
+          <p>Compile at local midnight, on quit, on system sleep, or any custom time of day. Mix any combination.</p>
+        </article>
+        <article class="gal-card">
+          <figure><img src="screenshots/06-appearance.png" alt="Appearance settings: menubar icon style, blink toggle, login-at-launch, OCR index toggle." loading="lazy"/></figure>
+          <h3>Appearance</h3>
+          <p>Film-strip, camera, or dot menubar icon. Optional blink on each capture. Launch-at-login. Toggle OCR indexing.</p>
+        </article>
+        <article class="gal-card">
+          <figure><img src="screenshots/07-about.png" alt="About: version, permissions status, XploreDatum credits." loading="lazy"/></figure>
+          <h3>About</h3>
+          <p>Both permissions in one place — Screen Recording status and the macOS "bypass picker" explainer.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────  HOW IT WORKS ───────────────────────────── -->
+    <section class="how">
+      <header class="gal-head">
+        <span class="eye"><span class="bullet b-green"></span> How it works</span>
+        <h2>Four moving parts. <em>One quiet film.</em></h2>
+      </header>
       <ol class="steps">
-        <li class="step">
-          <span class="step-num">01</span>
+        <li>
+          <span class="n">01</span>
           <h3>Capture</h3>
-          <p>Every <strong>1 second to 3 hours</strong>, a silent screenshot via ScreenCaptureKit. Multi-display composited preserving arrangement.</p>
+          <p>Every <strong>1 s to 3 h</strong>, a silent screenshot via ScreenCaptureKit.</p>
           <code>captureIntervalSeconds: 300</code>
         </li>
-        <li class="step">
-          <span class="step-num">02</span>
+        <li>
+          <span class="n">02</span>
           <h3>Dedupe</h3>
-          <p>Each frame SHA-256 hashed against the previous. <strong>Pixel-identical → dropped.</strong> An untouched screen never costs you disk.</p>
+          <p>SHA-256 vs. the previous frame. <strong>Identical → dropped.</strong></p>
           <code>SHA256 ≡ skip</code>
         </li>
-        <li class="step">
-          <span class="step-num">03</span>
+        <li>
+          <span class="n">03</span>
           <h3>Compile</h3>
-          <p>At midnight, on quit, on sleep, or a custom time, the day's unique frames stitch into <strong>a single MP4</strong> via AVFoundation.</p>
+          <p>The day's unique frames stitch into <strong>a single MP4</strong> via AVFoundation.</p>
           <code>AVAssetWriter → mp4</code>
         </li>
-        <li class="step">
-          <span class="step-num">04</span>
+        <li>
+          <span class="n">04</span>
           <h3>Share</h3>
-          <p>OCR-search visible text. Build a movie from any date range. <strong>Auto-upload to YouTube</strong> with your chosen title format.</p>
-          <code>Vision · FTS5 · YouTube API</code>
+          <p>OCR-search visible text. Build any range. <strong>Optional</strong> YouTube upload.</p>
+          <code>Vision · FTS5 · YouTube</code>
         </li>
       </ol>
     </section>
 
-    <!-- ─────────────────────────────  PRIVACY  ───────────────────────────── -->
+    <!-- ─────────────────────────────  PRIVACY ───────────────────────────── -->
     <section id="privacy" class="privacy">
-      <div class="privacy-card">
-        <div class="privacy-mark">
+      <div class="priv-card">
+        <div class="priv-mark" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
             <path d="m9 12 2 2 4-4"/>
           </svg>
         </div>
-        <div class="privacy-text">
-          <span class="section-mark">— Privacy</span>
-          <h2 class="privacy-title">Your screen <em>never leaves your Mac.</em></h2>
-          <p>No telemetry. No analytics. OCR runs locally via Apple Vision. The metadata DB lives in your storage folder. Movies live where you put them. The <em>only</em> network call DisplayMovie ever makes is to YouTube — and only if you explicitly connect.</p>
-          <div class="privacy-pills">
-            <span class="pill"><span class="pill-dot"></span> Local OCR via Vision</span>
-            <span class="pill"><span class="pill-dot"></span> Local SQLite + FTS5</span>
-            <span class="pill"><span class="pill-dot"></span> Refresh token in Keychain</span>
-            <span class="pill"><span class="pill-dot"></span> Source on GitHub</span>
+        <div>
+          <span class="eye"><span class="bullet b-green"></span> Privacy</span>
+          <h2>Your screen <em>never leaves your Mac.</em></h2>
+          <p>No telemetry. No analytics. OCR runs locally via Apple Vision. The metadata index is a local SQLite file. Movies live where you tell them to. The <em>only</em> outbound call DisplayMovie ever makes is to YouTube — and only after you explicitly connect.</p>
+          <div class="chips">
+            <span class="chip">Local Vision OCR</span>
+            <span class="chip">SQLite FTS5</span>
+            <span class="chip">Keychain refresh token</span>
+            <span class="chip">Source on GitHub</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ─────────────────────────────  DOWNLOAD  ───────────────────────────── -->
+    <!-- ─────────────────────────────  DOWNLOAD ───────────────────────────── -->
     <section id="download" class="download">
-      <div class="download-card">
+      <div class="dl-card">
         <div class="dl-left">
-          <span class="section-mark">— Download</span>
-          <h2 class="dl-title">Get DisplayMovie.</h2>
-          <p class="dl-sub">Signed and notarized for macOS Gatekeeper. Apple Silicon.</p>
-          <a class="btn primary big" id="download-button" href="https://github.com/XploreDatum/DisplayMovie-releases/releases/latest">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m6 9 6 6 6-6"/><path d="M5 21h14"/></svg>
+          <span class="eye"><span class="bullet b-amber"></span> Download</span>
+          <h2>Get DisplayMovie.</h2>
+          <p>Signed and notarized for macOS Gatekeeper. Apple Silicon.</p>
+          <a class="btn primary lg" id="download-btn" href="https://github.com/XploreDatum/DisplayMovie-releases/releases/latest">
+            <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m6 9 6 6 6-6"/><path d="M5 21h14"/></svg>
             Download .dmg
           </a>
-          <p class="dl-version-line">
-            <span class="dl-version">v0.1.0 · Apple Silicon · ≈ 12 MB</span>
-          </p>
+          <p class="dl-meta" id="dl-version">v0.1.0 · Apple Silicon · ≈ 12 MB</p>
         </div>
-        <div class="dl-right">
-          <dl class="specs">
-            <div><dt>Requires</dt><dd>macOS 14 Sonoma or later</dd></div>
-            <div><dt>Architecture</dt><dd>Apple Silicon (arm64)</dd></div>
-            <div><dt>Permissions</dt><dd>Screen Recording</dd></div>
-            <div><dt>Source</dt><dd><a href="https://github.com/XploreDatum/DisplayMovie-releases">XploreDatum/DisplayMovie-releases</a></dd></div>
-            <div><dt>License</dt><dd>Proprietary © XploreDatum</dd></div>
-          </dl>
-        </div>
+        <dl class="specs">
+          <div><dt>Requires</dt><dd>macOS 14 Sonoma or later</dd></div>
+          <div><dt>Architecture</dt><dd>Apple Silicon (arm64)</dd></div>
+          <div><dt>Permissions</dt><dd>Screen Recording</dd></div>
+          <div><dt>Source</dt><dd><a href="https://github.com/XploreDatum/DisplayMovie-releases">XploreDatum/DisplayMovie-releases</a></dd></div>
+          <div><dt>License</dt><dd>Proprietary © XploreDatum</dd></div>
+        </dl>
       </div>
     </section>
 
-    <!-- ─────────────────────────────  FAQ  ───────────────────────────── -->
+    <!-- ─────────────────────────────  FAQ ───────────────────────────── -->
     <section class="faq">
-      <div class="section-head">
-        <span class="section-mark">— FAQ</span>
-        <h2 class="section-title">Quick answers.</h2>
-      </div>
+      <header class="gal-head">
+        <span class="eye"><span class="bullet b-gray"></span> FAQ</span>
+        <h2>Quick answers.</h2>
+      </header>
       <div class="faq-grid">
-        <details>
-          <summary>Does it slow my Mac down?</summary>
-          <p>Captures take a few hundred milliseconds via ScreenCaptureKit on your chosen interval. The default 5-minute cadence is undetectable in practice. SHA-256 over a Retina frame is &lt; 100 ms on Apple Silicon.</p>
-        </details>
-        <details>
-          <summary>How much disk space?</summary>
-          <p>Retina PNGs run 1–5 MB each. At 5-min intervals over an 8-hour day, expect ~300–500 MB before dedupe. With Keep Screenshots After Compile off, the day's PNGs are deleted once the MP4 is built.</p>
-        </details>
-        <details>
-          <summary>Why two permission prompts on first launch?</summary>
-          <p>macOS gates screen recording twice — a coarse "Screen Recording" toggle in System Settings, plus a per-app dialog asking to "bypass the system picker". The wizard surfaces both inline so they're not a surprise later.</p>
-        </details>
-        <details>
-          <summary>What about Intel Macs?</summary>
-          <p>Currently Apple Silicon only. The codebase compiles for x86_64 but ScreenCaptureKit's performance characteristics on Intel haven't been tuned, so we don't want to ship that build yet.</p>
-        </details>
-        <details>
-          <summary>Other upload targets?</summary>
-          <p>Only YouTube in v1. The architecture is generic — Vimeo or self-hosted upload is a single new file.</p>
-        </details>
-        <details>
-          <summary>Is it open source?</summary>
-          <p>The release artifacts and this site are public at <a href="https://github.com/XploreDatum/DisplayMovie-releases">XploreDatum/DisplayMovie-releases</a>. App source is currently private while we polish v1.</p>
-        </details>
+        <details><summary>Does it slow my Mac down?</summary>
+          <p>Captures take a few hundred milliseconds via ScreenCaptureKit on your chosen interval. The default 5-minute cadence is undetectable in practice. SHA-256 over a Retina frame is &lt; 100 ms on Apple Silicon.</p></details>
+        <details><summary>How much disk space?</summary>
+          <p>Retina PNGs run 1–5 MB each. At 5-min intervals over an 8-hour day, expect ~300–500 MB before dedupe. With <em>Keep screenshots after compile</em> off, the day's PNGs are deleted once the MP4 is built.</p></details>
+        <details><summary>Why two permission prompts on first launch?</summary>
+          <p>macOS gates screen recording twice — a coarse "Screen Recording" toggle in System Settings, plus a per-app dialog asking to "bypass the system picker". The first-launch wizard surfaces both inline.</p></details>
+        <details><summary>Intel Macs?</summary>
+          <p>Currently Apple Silicon only. The codebase compiles for x86_64 but ScreenCaptureKit's performance on Intel hasn't been tuned, so we don't ship that build yet.</p></details>
+        <details><summary>Other upload targets?</summary>
+          <p>Only YouTube in v1. The architecture is generic — Vimeo or self-hosted upload is a single new file.</p></details>
+        <details><summary>Is it open source?</summary>
+          <p>The release artifacts and this site are public at <a href="https://github.com/XploreDatum/DisplayMovie-releases">XploreDatum/DisplayMovie-releases</a>. App source is currently private while we polish v1.</p></details>
       </div>
     </section>
 
   </main>
 
   <footer class="foot">
-    <div class="foot-grid">
+    <div class="foot-inner">
       <div class="foot-brand">
         <span class="brand-mark">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></svg>
         </span>
         <strong>DisplayMovie</strong>
       </div>
       <nav class="foot-links" aria-label="Footer">
-        <a href="#tour">Tour</a>
-        <a href="#how">How it works</a>
+        <a href="#capture">Capture</a>
+        <a href="#output">Output</a>
+        <a href="#share">Share</a>
         <a href="#privacy">Privacy</a>
         <a href="#download">Download</a>
         <a href="https://github.com/XploreDatum/DisplayMovie-releases">GitHub</a>
       </nav>
-      <div class="foot-credit">
-        <span>An <a href="https://xploredatum.com">XploreDatum</a> project.</span>
-        <span>Developed with <span class="heart">♥</span> in <em>Keralam</em>.</span>
-      </div>
+      <p class="foot-credit">
+        An <a href="https://xploredatum.com">XploreDatum</a> project.<br/>
+        Developed with <span class="heart">♥</span> in <em>Keralam</em>.
+      </p>
     </div>
   </footer>
 
