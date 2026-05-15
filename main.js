@@ -1,5 +1,39 @@
 // DisplayMovie · landing page · v5
 
+// ─── Theme toggle (defaults to system; manual override persists) ───
+(function themeToggle() {
+  const btn = document.getElementById('theme-toggle');
+  if (!btn) return;
+  const root = document.documentElement;
+  const mq = window.matchMedia('(prefers-color-scheme: dark)');
+
+  const currentMode = () => {
+    if (root.classList.contains('dark')) return 'dark';
+    if (root.classList.contains('light')) return 'light';
+    return mq.matches ? 'dark' : 'light';
+  };
+
+  const setMode = (mode) => {
+    root.classList.remove('dark', 'light');
+    root.classList.add(mode);
+    try { localStorage.setItem('theme', mode); } catch (e) {}
+  };
+
+  btn.addEventListener('click', () => {
+    setMode(currentMode() === 'dark' ? 'light' : 'dark');
+  });
+
+  // If user hasn't explicitly chosen, follow the system live.
+  mq.addEventListener('change', () => {
+    try {
+      if (!localStorage.getItem('theme')) {
+        root.classList.remove('dark', 'light');
+      }
+    } catch (e) {}
+  });
+})();
+
+
 (function resolveDownload() {
   const btn = document.getElementById('download-btn');
   if (!btn) return;
