@@ -49,10 +49,10 @@ Or connect this repo to Vercel from <https://vercel.com/new> for git-push auto-d
 
 2. **Tag and create a GitHub release**:
    ```bash
-   gh release create v0.1.0 build/DisplayMovie-0.1.0.dmg \
+   gh release create v0.1.1 build/DisplayMovie-0.1.1.dmg \
      --repo XploreDatum/DisplayMovie-releases \
-     --title "DisplayMovie v0.1.0" \
-     --notes "First public release."
+     --title "DisplayMovie v0.1.1" \
+     --notes "See release notes."
    ```
 
 3. **The website updates automatically.** `main.js` resolves the latest DMG via GitHub's API at page load (`/repos/XploreDatum/DisplayMovie-releases/releases/latest`) and rewrites the download button's `href` to point at it. The version chip in the download card updates too.
