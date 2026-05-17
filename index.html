@@ -81,7 +81,7 @@
     <!-- ───────────  HERO  ─────────── -->
     <section class="hero">
       <div class="hero-inner">
-        <span class="kicker">v0.1.1 · Designed for macOS</span>
+        <span class="kicker">v1.0.1 · Designed for macOS · $19 lifetime</span>
         <h1>A quiet timelapse of every&nbsp;day on your Mac.</h1>
         <p class="sub">Captures every <em>1 second to 3 hours</em>, drops identical frames, stitches what's left into a daily film. Search visible text. Ship it to YouTube. Stays entirely on your machine.</p>
         <div class="cta">
@@ -91,7 +91,7 @@
           </a>
           <a class="btn link" href="#capture">See what it does <span class="arr">›</span></a>
         </div>
-        <p class="micro">Free. Apple Silicon. macOS 14 Sonoma or later.</p>
+        <p class="micro">7-day free trial · $19 one-time, lifetime updates, up to 5 Macs · Apple Silicon · macOS 14 Sonoma or later.</p>
       </div>
 
       <div class="hero-stage">
@@ -293,13 +293,15 @@
       <div class="dl-card">
         <div class="dl-body">
           <span class="eyebrow"><span class="eye-dot"></span> Download</span>
-          <h2>Get DisplayMovie.</h2>
-          <p>Signed and notarized for macOS Gatekeeper. Apple Silicon.</p>
+          <h2>Try free for 7 days. Buy once.</h2>
+          <p>Signed and notarized for macOS Gatekeeper. Apple Silicon. Lifetime updates on up to 5 Macs.</p>
           <a class="btn primary lg" id="download-btn" href="https://github.com/XploreDatum/DisplayMovie-releases/releases/latest">
             <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m6 9 6 6 6-6"/><path d="M5 21h14"/></svg>
             Download .dmg
           </a>
-          <p class="dl-meta" id="dl-version">v0.1.1 · Apple Silicon · ≈ 5 MB</p>
+          &nbsp;
+          <a class="btn link" href="https://buy.polar.sh/polar_cl_95FcgUWuCKBJL76cpoQvY9eKhdXQ1zGm1LDwu2wrbA1">Buy ($19) <span class="arr">›</span></a>
+          <p class="dl-meta" id="dl-version">v1.0.1 · Apple Silicon · ≈ 5 MB · 7-day trial then $19 one-time</p>
         </div>
         <dl class="specs">
           <div><dt>Requires</dt><dd>macOS 14 Sonoma or later</dd></div>
@@ -319,8 +321,10 @@
         <details><summary>How much disk space?</summary><p>Retina PNGs run 1–5 MB each. At 5-min intervals over an 8-hour day, expect ~300–500 MB before dedupe. With <em>Keep screenshots after compile</em> off, the day's PNGs are deleted once the MP4 is built.</p></details>
         <details><summary>Why two permission prompts on first launch?</summary><p>macOS gates screen recording twice — a coarse "Screen Recording" toggle in System Settings, plus a per-app dialog asking to "bypass the system picker". The first-launch wizard surfaces both inline.</p></details>
         <details><summary>Intel Macs?</summary><p>Currently Apple Silicon only. The codebase compiles for x86_64 but ScreenCaptureKit's performance on Intel hasn't been tuned, so we don't ship that build yet.</p></details>
-        <details><summary>Other upload targets?</summary><p>Only YouTube in v1. We may add Vimeo or self-hosted upload later.</p></details>
-        <details><summary>Updates?</summary><p>Drop the latest signed DMG over the previous one. Settings, screenshots, and movies are preserved across versions.</p></details>
+        <details><summary>Other upload targets?</summary><p>YouTube is fully implemented in v1.0. Google Drive, Dropbox and S3 destinations are scaffolded in the UI and ship working in v1.1.</p></details>
+        <details><summary>How does the trial work?</summary><p>7 days from first launch, full access to every feature. After that, capture and compile are paused until you paste a license key (Settings → License). Existing captures and movies stay accessible regardless.</p></details>
+        <details><summary>Refunds?</summary><p>Yes — 14 days, no questions, via Polar's customer portal.</p></details>
+        <details><summary>Updates?</summary><p>Drop the latest signed DMG over the previous one. Settings, screenshots, and movies are preserved across versions. Updates are included for the lifetime of the license.</p></details>
       </div>
     </section>
 
